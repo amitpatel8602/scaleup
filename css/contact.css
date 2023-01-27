@@ -1,0 +1,45 @@
+.main-area {
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+  letter-spacing: 2px;
+}
+.profile-picture {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5%;
+  height: auto;
+  max-width: 200px;
+  border-radius: 50%;
+}
+.profile-name {
+  text-align: center;
+  padding: 30px;
+}
+.links {
+  text-align: center;
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid black;
+  border-width: 2px;
+  width: 290px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 40px;
+  margin-bottom: 30px;
+}
+.links {
+  text-decoration: none;
+  color: black;
+}
+.bottom-text {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.links:hover {
+  background-color: black;
+  color: white;
+}
