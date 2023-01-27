@@ -88,11 +88,14 @@ footer {
 .main-section {
   text-align: center;
 }
-.main-img {
+#main-img {
   margin-top: 20px;
   border-radius: 10px;
   box-shadow: 5px 5px 10px #ccc;
   margin-right: 90px;
+  width: 100%;
+  max-width: 1000px;
+  height: 600px;
 }
 
 .apply-button {
@@ -130,4 +133,9 @@ footer {
 }
 #job-heading {
   text-align: center;
+}
+.no-opening {
+  text-align: center;
+  color: red;
+  margin-bottom: 350px;
 }

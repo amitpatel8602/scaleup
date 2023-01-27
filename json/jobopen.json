@@ -1,18 +1,18 @@
 [
   {
-    "title": "Java Developer",
-    "companyname": "Infosys",
+    "title": "Example Title",
+    "companyname": "Example company",
     "category": "IT",
     "description": "We are looking for a Java Developer to join our team. Candidates should have experience with Java, Spring, and Hibernate.",
-    "location": "New York, NY",
-    "apply": "www.google.com"
+    "location": "No location",
+    "apply": "http://example.com"
   },
   {
-    "title": "Front-end Developer",
-    "companyname": "Infosys",
+    "title": "Example Title",
+    "companyname": "Example company",
     "category": "IT",
-    "description": "We are looking for a Front-end Developer to join our team. Candidates should have experience with HTML, CSS, and JavaScript.",
-    "location": "San Francisco, CA",
-    "apply": "www.google.com"
+    "description": "We are looking for a Java Developer to join our team. Candidates should have experience with Java, Spring, and Hibernate.",
+    "location": "No location",
+    "apply": "http://example.com"
   }
 ]
