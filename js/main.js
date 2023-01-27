@@ -1,4 +1,4 @@
-$.getJSON("/json/jobopen.json", function (data) {
+$.getJSON("json/jobopen.json", function (data) {
   var listings = data;
   var jobListings = $("#job-listings");
   for (var i = 0; i < listings.length; i++) {
