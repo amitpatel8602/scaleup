@@ -11,6 +11,10 @@ $.getJSON("json/jobopen.json", function (data) {
       jobListing.append("<p>Category: " + listing.category + "</p>");
       jobListing.append("<p>Description: " + listing.description + "</p>");
       jobListing.append("<p>Location: " + listing.location + "</p>");
+      if (listing.isExpired) {
+        jobListing.append('<p class="expired">Expired</p>');
+      }
+
       jobListing.append(
         '<a href="' +
           listing.apply +
