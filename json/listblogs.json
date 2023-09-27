@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Key Considerations for Migrating to AEM as a Cloud Service",
+    "image": "/images/11.jpg",
+    "alt": "alttext",
+    "date": "18/08/2023",
+    "description": "In this post, let us explore the architecture of AEM as a Cloud platform and the key considerations and approaches to migrate the existing AEM platform to AEM as a Cloud Service SaaS platform. Please note the details discussed below are more of my personal view and do not reflect the direct view of Adobe or my current organization; validate different perspectives with Adobe before onboarding to AEM as a Cloud Service. Adobe Experience Manager (AEM) is now available as a Cloud Service. Refer to Introduction to Adobe Experience Manager as a Cloud Service | Adobe Experience Manager for more details on AEM as a Cloud Service values.",
+    "author": "Albin Issac",
+    "source": "medium",
+    "more": "https://medium.com/tech-learnings/key-considerations-for-migrating-to-aem-as-a-cloud-service-2a458a6c77d9"
+  },
+  {
+    "title": "AEM 6.5 Model Annotations",
+    "image": "/images/13.jpg",
+    "alt": "alttext",
+    "date": "21/08/2023",
+    "description": "Adobe Experience Manager (AEM) 6.5 supports various annotations for use in Java models. These annotations are used to inject values, adapt resources, and perform other operations on Sling Models.",
+    "author": "Mircea Dumitrescu",
+    "source": "medium",
+    "more": "https://medium.com/@mirceagab/aem-6-5-model-annotations-a9493b6e1b28"
+  }
+]
