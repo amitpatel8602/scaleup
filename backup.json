@@ -1,0 +1,19 @@
+[
+    {
+      "title": "Example Title",
+      "companyname": "Example company",
+      "category": "IT",
+      "description": "We are looking for a Java Developer to join our team. Candidates should have experience with Java, Spring, and Hibernate.",
+      "location": "No location",
+      "apply": "http://example.com"
+    },
+    {
+      "title": "Example Title",
+      "companyname": "Example company",
+      "category": "IT",
+      "description": "We are looking for a Java Developer to join our team. Candidates should have experience with Java, Spring, and Hibernate.",
+      "location": "No location",
+      "apply": "http://example.com"
+    }
+  ]
+  
