@@ -9,7 +9,9 @@ fetch("https://api.quotable.io/random")
   .then((data) => {
     // Process the response data here
     var quote = document.getElementById("main-para");
-    quote.innerText = data.content; // Example: Logging the data to the console
+    var putData = data.content + "    \n-" + data.author;
+    quote.innerText = putData; // Example: Logging the data to the console
+    console.log(data);
   })
   .catch((error) => {
     // Handle any errors here
