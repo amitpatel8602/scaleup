@@ -1,5 +1,6 @@
 $.getJSON("json/listblogs.json", function (data) {
   var listings = data;
+  var randomImagePath = "https://source.unsplash.com/random/?computer"; //working on fix for late image loading
   var jobListings = $("#blog-listings");
   if (listings.length > 0) {
     for (var i = 0; i < listings.length; i++) {
@@ -10,7 +11,7 @@ $.getJSON("json/listblogs.json", function (data) {
 
       jobListing.append(
         '<img src="' +
-          listing.image +
+          randomImagePath +
           '"' +
           ' class="blog-image" alt="' +
           listing.alt +
