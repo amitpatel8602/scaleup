@@ -86,8 +86,16 @@ footer {
   margin-top: 10px;
 }
 
+#clockdate {
+  margin-top: 5px;
+  color: #333;
+  float: right;
+  text-align: center;
+}
+
 .main-section {
   text-align: center;
+  padding-left: 100px;
 }
 
 #main-img {
