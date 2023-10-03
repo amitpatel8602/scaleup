@@ -13,6 +13,11 @@
   border-radius: 50%;
 }
 .profile-name {
+  font-size: 35px;
+  text-align: center;
+  font-family: brush script mt;
+}
+.profile-desc {
   text-align: center;
   padding: 30px;
 }
