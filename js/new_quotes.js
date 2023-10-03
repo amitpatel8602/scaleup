@@ -11,7 +11,7 @@ fetch("https://api.quotable.io/random")
     var quote = document.getElementById("main-para");
     var putData = data.content + "    \n-" + data.author;
     quote.innerText = putData; // Example: Logging the data to the console
-    console.log(data);
+    //console.log(data);
   })
   .catch((error) => {
     // Handle any errors here
