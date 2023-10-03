@@ -4,6 +4,7 @@
   float: left;
   margin-right: 10px;
 }
+
 #company-name {
   text-align: center;
   align-self: center;
@@ -88,6 +89,7 @@ footer {
 .main-section {
   text-align: center;
 }
+
 #main-img {
   margin-top: 20px;
   border-radius: 10px;
@@ -115,6 +117,7 @@ footer {
 #main-para {
   text-align: center;
 }
+
 #loader {
   position: fixed;
   width: 100%;
@@ -132,9 +135,11 @@ footer {
 .services-links:hover {
   font-size: 20px;
 }
+
 #job-heading {
   text-align: center;
 }
+
 .no-opening {
   text-align: center;
   color: red;
