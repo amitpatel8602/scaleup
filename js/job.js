@@ -1,5 +1,11 @@
 $.getJSON("json/jobopen.json", function (data) {
   var listings = data;
+  listings.sort(function (a, b) {
+    var c = new Date(a.date).getTime();
+    //console.log(c);
+    var d = new Date(b.date).getTime();
+    return c > d ? 1 : -1;
+  });
   var jobListings = $("#job-listings");
   if (listings.length > 0) {
     for (var i = 0; i < listings.length; i++) {

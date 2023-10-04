@@ -1,5 +1,11 @@
 $.getJSON("json/listblogs.json", function (data) {
   var listings = data;
+  listings.sort(function (a, b) {
+    var c = new Date(a.date).getTime();
+    //console.log(c);
+    var d = new Date(b.date).getTime();
+    return c > d ? 1 : -1;
+  });
   var randomImagePath = "https://source.unsplash.com/random/?computer"; //working on fix for late image loading
   var imageAlt = "random image";
   var blogListings = $("#blog-listings");
@@ -24,7 +30,7 @@ $.getJSON("json/listblogs.json", function (data) {
       blogListing.append(
         '<p class="blog-desc">Description: ' + listing.description + "</p>"
       );
-
+      blogListing.append("<p>Tag: " + listing.tag + "</p>");
       blogListing.append("<p>Source: " + listing.source + "</p>");
       blogListing.append(
         '<a href="' +
