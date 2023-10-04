@@ -6,12 +6,14 @@ $.getJSON("json/listblogs.json", function (data) {
     var d = new Date(b.date).getTime();
     return c > d ? 1 : -1;
   });
-  var randomImagePath = "https://source.unsplash.com/random/?computer"; //working on fix for late image loading
+  //working on fix for late image loading
   var imageAlt = "random image";
   var blogListings = $("#blog-listings");
   if (listings.length > 0) {
     for (var i = 0; i < listings.length; i++) {
       var listing = listings[i];
+      var randomImagePath =
+        "https://source.unsplash.com/random/" + i + "?computer";
       var blogListing = $(".blog-listing").eq(i);
       blogListing.append('<div class="blog-listing">');
       blogListing.append("<h3>" + listing.title + "</h3>");
