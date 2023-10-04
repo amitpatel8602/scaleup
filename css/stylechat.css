@@ -94,18 +94,17 @@ footer {
 }
 
 .main-section {
-  padding-left: 55px;
   text-align: center;
 }
 
 #main-img {
-  margin-top: 20px;
   border-radius: 10px;
   box-shadow: 5px 5px 10px #ccc;
-  margin-right: 90px;
   width: 100%;
   max-width: 1000px;
   height: 400px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .apply-button {
