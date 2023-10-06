@@ -174,3 +174,10 @@ footer {
 .right {
   margin-left: 15px;
 }
+@media only screen and (min-width: 768px) {
+  #new-left {
+    float: right;
+    margin-top: -15px;
+    margin-right: 50px;
+  }
+}
