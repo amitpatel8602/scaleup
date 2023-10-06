@@ -160,10 +160,11 @@ footer {
   height: 120px;
   width: 250px;
 }
-
-.blog-desc {
-  inline-size: 900px;
-  word-wrap: break-word;
+@media only screen and (min-width: 768px) {
+  .blog-desc {
+    inline-size: 900px;
+    word-wrap: break-word;
+  }
 }
 
 .expired {

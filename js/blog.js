@@ -7,26 +7,36 @@ $.getJSON("json/listblogs.json", function (data) {
     return c > d ? 1 : -1;
   });
   //working on fix for late image loading
-  var imageAlt = "random image";
   var blogListings = $("#blog-listings");
   var whatsnewblog = $("#new-left");
   if (listings.length > 0) {
     for (var i = 0; i < listings.length; i++) {
       var listing = listings[i];
-      var randomImagePath =
-        "https://source.unsplash.com/random/" + i + "?computer";
       var blogListing = $(".blog-listing").eq(i);
       blogListing.append('<div class="blog-listing">');
       blogListing.append("<h3>" + listing.title + "</h3>");
 
-      blogListing.append(
-        '<img src="' +
-          randomImagePath +
-          '"' +
-          ' class="blog-image" alt="' +
-          imageAlt +
-          '"></img>'
-      );
+      if (listing.tag) {
+        blogListing.append(
+          '<img src="' +
+            "images/" +
+            listing.tag +
+            ".png" +
+            '"' +
+            ' class="blog-image" alt="' +
+            listing.tag +
+            '"></img>'
+        );
+      } else {
+        blogListing.append(
+          '<img src="' +
+            "images/white_paper.png" +
+            '"' +
+            ' class="blog-image" alt="' +
+            "white_paper" +
+            '"></img>'
+        );
+      }
 
       blogListing.append("<p>Author: " + listing.author + "</p>");
       blogListing.append("<p>Date: " + listing.date + "</p>");
