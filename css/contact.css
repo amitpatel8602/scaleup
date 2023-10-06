@@ -60,3 +60,8 @@
   background-color: black;
   color: white;
 }
+@media only screen and (min-width: 768px) {
+  #body-contact {
+    background-image: url(/images/back.jpg);
+  }
+}
