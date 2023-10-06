@@ -41,7 +41,7 @@ fetch("json/jobopen.json")
       "<h3>Job</h3>" +
       "<p>" +
       loop.title +
-      " in " +
+      " for " +
       "<strong>" +
       loop.companyname +
       "</strong>" +
