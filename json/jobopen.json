@@ -16,7 +16,17 @@
     "date": "09/30/2023",
     "description": "We are looking for candidates to join our team in different domain.",
     "location": "Different location",
-    "apply": "https://careers.wipro.com/global-india/jobs",
+    "apply": "https://www.tcs.com/careers/india",
+    "isExpired": true
+  },
+  {
+    "title": "AEM developer",
+    "companyname": "TCS",
+    "category": "IT",
+    "date": "10/03/2023",
+    "description": "We are looking for experienced AEM developer.",
+    "location": "Different location",
+    "apply": "https://www.tcs.com/careers/india",
     "isExpired": true
   }
 ]

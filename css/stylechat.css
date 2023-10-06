@@ -112,7 +112,7 @@ footer {
   background-color: #333;
   color: white;
   text-decoration: none;
-  border-radius: 5px;
+  border-radius: 20px;
 }
 
 .job-listing,
@@ -169,4 +169,8 @@ footer {
 .expired {
   color: red;
   font-weight: bold;
+}
+
+.right {
+  margin-left: 15px;
 }

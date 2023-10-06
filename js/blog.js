@@ -9,6 +9,7 @@ $.getJSON("json/listblogs.json", function (data) {
   //working on fix for late image loading
   var imageAlt = "random image";
   var blogListings = $("#blog-listings");
+  var whatsnewblog = $("#new-left");
   if (listings.length > 0) {
     for (var i = 0; i < listings.length; i++) {
       var listing = listings[i];
