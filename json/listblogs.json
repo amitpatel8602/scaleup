@@ -43,5 +43,14 @@
     "tag": "java",
     "source": "openjdk",
     "more": "https://openjdk.org/projects/jdk/21/"
+  },
+  {
+    "title": "Sling Resource Merging Properties",
+    "date": "10/06/2023",
+    "description": "Customization—Sling Resource Merging.",
+    "author": "Briankasingli",
+    "tag": "aem",
+    "source": "sourcedcode.com",
+    "more": "https://sourcedcode.com/blog/aem/sling-resource-merging-properties"
   }
 ]

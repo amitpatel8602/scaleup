@@ -11,7 +11,9 @@ fetch("json/listblogs.json")
       "<p>" +
       loop.title +
       " by " +
+      "<strong>" +
       loop.author +
+      "</strong>" +
       "</p>" +
       "<p>" +
       loop.date +
@@ -40,7 +42,9 @@ fetch("json/jobopen.json")
       "<p>" +
       loop.title +
       " in " +
+      "<strong>" +
       loop.companyname +
+      "</strong>" +
       "</p>" +
       "<p>" +
       loop.date +

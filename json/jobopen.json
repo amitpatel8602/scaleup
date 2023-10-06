@@ -28,5 +28,14 @@
     "location": "Different location",
     "apply": "https://www.tcs.com/careers/india",
     "isExpired": true
+  },
+  {
+    "title": "AEM developer",
+    "companyname": "Rockwell Automation",
+    "category": "IT",
+    "date": "10/04/2023",
+    "description": "We are looking for experienced AEM developer.",
+    "location": "Pune, Maharashtra, India (On-site)",
+    "apply": "https://jobs.rockwellautomation.com/job/18878783/aem-full-stack-develoepr-pune-in/?Codes=ILINK"
   }
 ]
