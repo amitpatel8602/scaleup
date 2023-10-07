@@ -21,13 +21,13 @@ fetch("json/listblogs.json")
       "<p>" +
       loop.description +
       "</p>" +
+      "<a " +
+      "href='blogs.html' class='apply-button'" +
+      ">Explore More</a>" +
       '<a href="' +
       loop.more +
       '"' +
-      ' target="_blank" class="apply-button">See More</a>' +
-      "<a " +
-      "href='blogs.html' class='apply-button right'" +
-      ">More Blogs</a>";
+      ' target="_blank" class="apply-button right">See Blog</a>';
   });
 
 fetch("json/jobopen.json")
@@ -37,6 +37,21 @@ fetch("json/jobopen.json")
     sortArray(joblistings);
     var data = document.getElementById("new-right");
     var loop = joblistings[val];
+    console.log(loop.isExpired);
+    var jobExpiry = loop.isExpired == undefined || !loop.isExpired;
+    var desc = !jobExpiry
+      ? "<p class='expired'>This job is expired.</p>"
+      : loop.description;
+    var applyClass = jobExpiry
+      ? "class='apply-button right'"
+      : 'class="apply-button  right disabled"';
+    var applyButtonHtml =
+      '<a href="' +
+      loop.apply +
+      '"' +
+      ' target="_blank"' +
+      applyClass +
+      ">Apply</a>";
     data.innerHTML =
       "<h3>Job</h3>" +
       "<p>" +
@@ -50,15 +65,12 @@ fetch("json/jobopen.json")
       loop.date +
       "</p>" +
       "<p>" +
-      loop.description +
+      desc +
       "</p>" +
-      '<a href="' +
-      loop.apply +
-      '"' +
-      ' target="_blank" class="apply-button">Apply</a>' +
       "<a " +
-      "href='job_list.html'class='apply-button right'" +
-      ">More Jobs</a>";
+      "href='job_list.html'class='apply-button'" +
+      ">Explore More</a>" +
+      applyButtonHtml;
   });
 
 function sortArray(arr) {

@@ -182,3 +182,8 @@ footer {
     margin-right: 50px;
   }
 }
+
+.disabled {
+  pointer-events: none;
+  visibility: hidden;
+}

@@ -21,12 +21,13 @@ $.getJSON("json/jobopen.json", function (data) {
       if (listing.isExpired) {
         jobListing.append('<p class="expired">Expired</p>');
       }
-
       jobListing.append(
-        '<a href="' +
-          listing.apply +
-          '"' +
-          ' target="_blank" class="apply-button">Apply</a>'
+        !listing.isExpired
+          ? '<a href="' +
+              listing.apply +
+              '"' +
+              ' target="_blank" class="apply-button">Apply</a>'
+          : ""
       );
       jobListing.append("</div>");
     }
