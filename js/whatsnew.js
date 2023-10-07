@@ -37,8 +37,8 @@ fetch("json/jobopen.json")
     sortArray(joblistings);
     var data = document.getElementById("new-right");
     var loop = joblistings[val];
-    console.log(loop.isExpired);
-    var jobExpiry = loop.isExpired == undefined || !loop.isExpired;
+    var isExpired = checkJobExpired(loop);
+    var jobExpiry = isExpired == undefined || !isExpired;
     var desc = !jobExpiry
       ? "<p class='expired'>This job is expired.</p>"
       : loop.description;
@@ -63,6 +63,8 @@ fetch("json/jobopen.json")
       "</p>" +
       "<p>" +
       loop.date +
+      " - " +
+      loop.lastdate +
       "</p>" +
       "<p>" +
       desc +
@@ -79,4 +81,10 @@ function sortArray(arr) {
     var d = new Date(b.date).getTime();
     return c < d ? 1 : -1;
   });
+}
+
+function checkJobExpired(listing) {
+  var d1 = new Date();
+  var d2 = new Date(listing.lastdate);
+  return d1 > d2;
 }

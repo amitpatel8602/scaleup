@@ -4,36 +4,37 @@
     "companyname": "Wipro",
     "category": "IT",
     "date": "08/25/2023",
+    "lastdate": "10/04/2023",
     "description": "We are looking for candidates to join our team in different domain.",
     "location": "Different location",
-    "apply": "https://careers.wipro.com/global-india/jobs",
-    "isExpired": true
+    "apply": "https://careers.wipro.com/global-india/jobs"
   },
   {
     "title": "Frontend Engineer",
     "companyname": "TCS",
     "category": "IT",
     "date": "09/30/2023",
+    "lastdate": "10/06/2023",
     "description": "We are looking for candidates to join our team in different domain.",
     "location": "Different location",
-    "apply": "https://www.tcs.com/careers/india",
-    "isExpired": true
+    "apply": "https://www.tcs.com/careers/india"
   },
   {
     "title": "AEM developer",
     "companyname": "TCS",
     "category": "IT",
     "date": "10/03/2023",
+    "lastdate": "10/06/2023",
     "description": "We are looking for experienced AEM developer.",
     "location": "Different location",
-    "apply": "https://www.tcs.com/careers/india",
-    "isExpired": true
+    "apply": "https://www.tcs.com/careers/india"
   },
   {
     "title": "AEM developer",
     "companyname": "Rockwell Automation",
     "category": "IT",
     "date": "10/04/2023",
+    "lastdate": "10/08/2023",
     "description": "We are looking for experienced AEM developer.",
     "location": "Pune, Maharashtra, India (On-site)",
     "apply": "https://jobs.rockwellautomation.com/job/18878783/aem-full-stack-develoepr-pune-in/?Codes=ILINK"

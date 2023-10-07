@@ -11,18 +11,20 @@ $.getJSON("json/jobopen.json", function (data) {
     for (var i = 0; i < listings.length; i++) {
       var listing = listings[i];
       var jobListing = $(".job-listing").eq(i);
+      var isExpired = checkJobExpired(listing);
       jobListing.append('<div class="job-listing">');
       jobListing.append("<h3>" + listing.title + "</h3>");
       jobListing.append("<p>Company: " + listing.companyname + "</p>");
       jobListing.append("<p>Category: " + listing.category + "</p>");
       jobListing.append("<p>Date: " + listing.date + "</p>");
+      jobListing.append("<p>Last Date: " + listing.lastdate + "</p>");
       jobListing.append("<p>Description: " + listing.description + "</p>");
       jobListing.append("<p>Location: " + listing.location + "</p>");
-      if (listing.isExpired) {
+      if (isExpired) {
         jobListing.append('<p class="expired">Expired</p>');
       }
       jobListing.append(
-        !listing.isExpired
+        !isExpired
           ? '<a href="' +
               listing.apply +
               '"' +
@@ -38,3 +40,9 @@ $.getJSON("json/jobopen.json", function (data) {
     );
   }
 });
+
+function checkJobExpired(listing) {
+  var d1 = new Date();
+  var d2 = new Date(listing.lastdate);
+  return d1 > d2;
+}
