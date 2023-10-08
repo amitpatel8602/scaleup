@@ -188,3 +188,9 @@ footer {
   pointer-events: none;
   visibility: hidden;
 }
+
+.load-more {
+  background: transparent;
+  border: none !important;
+  color: blue;
+}

@@ -8,7 +8,6 @@ $.getJSON("json/listblogs.json", function (data) {
   });
   //working on fix for late image loading
   var blogListings = $("#blog-listings");
-  var whatsnewblog = $("#new-left");
   if (listings.length > 0) {
     for (var i = 0; i < listings.length; i++) {
       var listing = listings[i];
@@ -41,9 +40,11 @@ $.getJSON("json/listblogs.json", function (data) {
       blogListing.append("<p>Author: " + listing.author + "</p>");
       blogListing.append("<p>Date: " + listing.date + "</p>");
       blogListing.append(
-        '<p class="blog-desc">Description: ' + listing.description + "</p>"
+        '<p class="blog-desc">Description: ' +
+          descriptionVal(listing, i) +
+          "</p>"
       );
-      blogListing.append("<p>Tag: " + listing.tag + "</p>");
+      //blogListing.append("<p>Tag: " + listing.tag + "</p>");
       blogListing.append("<p>Source: " + listing.source + "</p>");
       blogListing.append(
         '<a href="' +
@@ -63,3 +64,26 @@ $.getJSON("json/listblogs.json", function (data) {
     );
   }
 });
+
+function descriptionVal(listing, ind) {
+  var values = listing.description;
+  var arr = values.split(" ");
+  var limit = 50;
+  if (arr.length > limit) {
+    return (
+      arr.slice(0, limit).join(" ") +
+      "...<button class='load-more' onclick='loadMore(\"" +
+      values +
+      '", ' +
+      ind +
+      ")'>Load More</button>"
+    );
+  } else {
+    return values;
+  }
+}
+function loadMore(values, ind) {
+  var data = document.getElementsByClassName("blog-desc");
+  data[data.length - ind - 1].innerHTML =
+    '<p class="blog-desc">Description: ' + values + "</p>";
+}
