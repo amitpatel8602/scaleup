@@ -194,3 +194,10 @@ footer {
   border: none !important;
   color: blue;
 }
+.wrong-user {
+  text-align: center;
+  color: red;
+}
+.login-body {
+  background-color: #fff;
+}
