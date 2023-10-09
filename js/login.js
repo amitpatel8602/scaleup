@@ -28,3 +28,17 @@ function formSubmit() {
 function clear() {
   document.getElementById("wrong-pass").innerText = "";
 }
+
+function changeImage() {
+  console.log("print");
+  var image = document.getElementsByClassName("img-fluid");
+  if (
+    image[0].src ==
+    "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg"
+  ) {
+    image[0].src = "images/AdobeStock.png";
+  } else {
+    image[0].src =
+      "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg";
+  }
+}

@@ -12,17 +12,18 @@
     <script src="js/login.js"></script>
     <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
   </head>
-  <body class="login-body">
+  <body class="login-body" onload="setInterval(changeImage,2000);">
     <section class="vh-100">
       <a href="index.html">Back to homepage</a>
       <div class="container py-5 h-100">
         <div class="row d-flex align-items-center justify-content-center h-100">
           <div class="col-md-8 col-lg-7 col-xl-6">
             <img
-              src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg"
+              src="images\AdobeStock.png"
               class="img-fluid"
               alt="Phone image"
             />
+            <!src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg">
           </div>
           <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
             <form action="javascript:;" onsubmit="formSubmit(this)">

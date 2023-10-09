@@ -201,3 +201,7 @@ footer {
 .login-body {
   background-color: #fff;
 }
+.img-fluid {
+  height: 350px;
+  width: 600px;
+}
