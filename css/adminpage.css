@@ -13,3 +13,8 @@
 .right {
   margin-left: 50px !important;
 }
+.log-out {
+  float: right;
+  font-size: 17px;
+  text-transform: capitalize;
+}

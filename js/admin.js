@@ -1,9 +1,9 @@
 function genrateData() {
   var prev = document.referrer;
   var datapage = document.getElementsByClassName("loadAdmin")[0];
-  console.log(datapage);
   if (prev.endsWith("/login.html") || prev.search("/admin.html") != -1) {
     var selectData =
+      "<a class='log-out' onclick='logout();'>logout</a>" +
       "<h1 class='heading'>Welcome Admin!</h1>" +
       "<div class='dataSelect-form'>" +
       "<form>" +
@@ -32,4 +32,15 @@ function genrateData() {
     datapage.innerHTML =
       "<h1 class='heading'>You are not allowed to see this page content...Error 404</h1>";
   }
+}
+
+function logout() {
+  var datapage = document.getElementsByClassName("loadAdmin")[0];
+  console.log(datapage);
+  datapage.innerHTML =
+    "<h1 class='heading'>Logging Out...</h1>" +
+    "<p class='heading'>you are redirecting to Scale up home page. Please wait</p>";
+  setTimeout(() => {
+    window.location.href = "index.html";
+  }, 3000);
 }
