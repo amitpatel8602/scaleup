@@ -24,6 +24,7 @@ function genrateData() {
       datapage.innerHTML = afterHtml + "<p class='heading'>Hi from job</p>";
     } else if (val == "blog") {
       datapage.innerHTML = afterHtml + "<p class='heading'>Hi from blog</p>";
+      document.getElementById("data").value = "blog";
     }
     //console.log();
   } else {
