@@ -45,6 +45,7 @@ function logout() {
     "<h1 class='heading'>Logging Out...</h1>" +
     "<p class='heading'>you are redirecting to Scale up home page. Please wait</p>";
   setTimeout(() => {
-    window.location.href = "index.html";
+    window.location.href = "contact.html";
+    window.location.href = "index.html"; 
   }, 3000);
 }
