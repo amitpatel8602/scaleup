@@ -28,9 +28,13 @@ function genrateData() {
     }
     //console.log();
   } else {
-    document.title = "404";
+    document.title = "Not found";
     datapage.innerHTML =
-      "<h1 class='heading'>You are not allowed to see this page content...Error 404</h1>";
+      "<h1 class='heading'>You are not allowed to see this page content...</h1>" +
+      "<p class='heading'>PLEASE LOGIN FIRST</p>";
+    setTimeout(() => {
+      window.location.href = "login.html";
+    }, 3000);
   }
 }
 
