@@ -1,5 +1,5 @@
 const val = 0;
-fetch("json/listblogs.json")
+fetch("https://api.npoint.io/fd0b712706a4831d4be4")
   .then((response) => response.json())
   .then((jsonblog) => {
     bloglistings = jsonblog;
@@ -30,7 +30,7 @@ fetch("json/listblogs.json")
       ' target="_blank" class="apply-button right">See Blog</a>';
   });
 
-fetch("json/jobopen.json")
+fetch("https://api.npoint.io/b55981b46615da93bb57")
   .then((response) => response.json())
   .then((jsonjob) => {
     joblistings = jsonjob;

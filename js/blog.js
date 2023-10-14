@@ -1,4 +1,4 @@
-$.getJSON("json/listblogs.json", function (data) {
+$.getJSON("https://api.npoint.io/fd0b712706a4831d4be4", function (data) {
   var listings = data;
   listings.sort(function (a, b) {
     var c = new Date(a.date).getTime();
