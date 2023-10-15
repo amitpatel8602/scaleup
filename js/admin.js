@@ -53,9 +53,17 @@ function logout() {
 }
 
 function loadJobData() {
-  return "<p class='heading'>You can navigate to: <a target='_blank' href='https://www.npoint.io/docs/b55981b46615da93bb57'>Edit Job Database</a></p>";
+  return (
+    "<p class='heading'>You can navigate to: <a target='_blank' href='" +
+    JOB_OPEN_PATH +
+    "'>Edit Job Database</a></p>"
+  );
 }
 function loadBlogData() {
-  return "<p class='heading'>You can navigate to: <a target='_blank' href='https://www.npoint.io/docs/fd0b712706a4831d4be4'>Edit Blog Database</a></p>";
+  return (
+    "<p class='heading'>You can navigate to: <a target='_blank' href='" +
+    BLOG_LIST_PATH +
+    "'>Edit Blog Database</a></p>"
+  );
 }
 function loadInputTable() {}

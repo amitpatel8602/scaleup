@@ -1,4 +1,4 @@
-$.getJSON("https://api.npoint.io/b55981b46615da93bb57", function (data) {
+$.getJSON(JOB_OPEN_PATH, function (data) {
   var listings = data;
   listings.sort(function (a, b) {
     var c = new Date(a.date).getTime();

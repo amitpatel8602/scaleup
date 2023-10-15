@@ -1,36 +1,6 @@
 const val = 0;
-fetch("https://api.npoint.io/fd0b712706a4831d4be4")
-  .then((response) => response.json())
-  .then((jsonblog) => {
-    bloglistings = jsonblog;
-    sortArray(bloglistings);
-    var data = document.getElementById("new-left");
-    var loop = bloglistings[val];
-    data.innerHTML =
-      "<h3>Blog</h3>" +
-      "<p>" +
-      loop.title +
-      " by " +
-      "<strong>" +
-      loop.author +
-      "</strong>" +
-      "</p>" +
-      "<p>" +
-      loop.date +
-      "</p>" +
-      "<p>" +
-      loop.description +
-      "</p>" +
-      "<a " +
-      "href='blogs.html' class='apply-button'" +
-      ">Explore More</a>" +
-      '<a href="' +
-      loop.more +
-      '"' +
-      ' target="_blank" class="apply-button right">See Blog</a>';
-  });
-
-fetch("https://api.npoint.io/b55981b46615da93bb57")
+var isDataAtLeft = true;
+fetch(JOB_OPEN_PATH)
   .then((response) => response.json())
   .then((jsonjob) => {
     joblistings = jsonjob;
@@ -43,8 +13,8 @@ fetch("https://api.npoint.io/b55981b46615da93bb57")
       ? "<p class='expired'>This job is expired.</p>"
       : loop.description;
     var applyClass = jobExpiry
-      ? "class='apply-button right'"
-      : 'class="apply-button  right disabled"';
+      ? "class='apply-button'"
+      : 'class="apply-button disabled"';
     var applyButtonHtml =
       '<a href="' +
       loop.apply +
@@ -69,10 +39,54 @@ fetch("https://api.npoint.io/b55981b46615da93bb57")
       "<p>" +
       desc +
       "</p>" +
+      applyButtonHtml +
       "<a " +
-      "href='job_list.html'class='apply-button'" +
-      ">Explore More</a>" +
-      applyButtonHtml;
+      "href='job_list.html'class='apply-button right'" +
+      ">Explore More</a>";
+  })
+  .catch((error) => {
+    isDataAtLeft = false;
+    console.error("An error occurred:", error);
+  });
+
+fetch(BLOG_LIST_PATH)
+  .then((response) => response.json())
+  .catch(Error)
+  .then((jsonblog) => {
+    bloglistings = jsonblog;
+    sortArray(bloglistings);
+    var data;
+    if (isDataAtLeft) {
+      data = document.getElementById("new-left");
+    } else {
+      data = document.getElementById("new-right");
+    }
+    var loop = bloglistings[val];
+    data.innerHTML =
+      "<h3>Blog</h3>" +
+      "<p>" +
+      loop.title +
+      " by " +
+      "<strong>" +
+      loop.author +
+      "</strong>" +
+      "</p>" +
+      "<p>" +
+      loop.date +
+      "</p>" +
+      "<p>" +
+      loop.description +
+      "</p>" +
+      '<a href="' +
+      loop.more +
+      '"' +
+      ' target="_blank" class="apply-button">See Blog</a>' +
+      "<a " +
+      "href='blogs.html' class='apply-button right'" +
+      ">Explore More</a>";
+  })
+  .catch((error) => {
+    console.error("An error occurred:", error);
   });
 
 function sortArray(arr) {
