@@ -1,4 +1,4 @@
-fetch("https://api.quotable.io/random")
+fetch(QUOTE_API_PATH)
   .then((response) => {
     if (response.ok) {
       return response.json();
