@@ -54,16 +54,21 @@ function logout() {
 
 function loadJobData() {
   return (
-    "<p class='heading'>You can navigate to: <a target='_blank' href='" +
+    "<p class='heading'><a target='_blank' href='" +
     JOB_OPEN_PATH +
+    "'>API Path</a></p>" +
+    "<p class='heading'>You can navigate to: <a target='_blank' href='" +
+    JOB_OPEN_EDIT_PATH +
     "'>Edit Job Database</a></p>"
   );
 }
 function loadBlogData() {
   return (
-    "<p class='heading'>You can navigate to: <a target='_blank' href='" +
+    "<p class='heading'><a target='_blank' href='" +
     BLOG_LIST_PATH +
+    "'>API Path</a></p>" +
+    "<p class='heading'>You can navigate to: <a target='_blank' href='" +
+    BLOG_LIST_EDIT_PATH +
     "'>Edit Blog Database</a></p>"
   );
 }
-function loadInputTable() {}
