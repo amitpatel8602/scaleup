@@ -58,12 +58,14 @@ function loadJobData() {
     "<p class='heading'><a target='_blank' href='" +
     JOB_OPEN_PATH +
     "'>API Path</a></p>" +
+    "</br>" +
     "<p class='heading'>API Status Code and Response Time</p>" +
     "<p class='heading'>Status Code: <span id='statusCode'>None</span></p>" +
     "<p class='heading'>Response Time: <span id='responseTime'></span>0 ms</p>" +
-    "<button class='api-button' onclick=\"makeApiRequest('" +
+    "<button class='apply-button api-button' onclick=\"makeApiRequest('" +
     JOB_OPEN_PATH +
     "')\">Make API Request</button>" +
+    "</br>" +
     "<p class='heading'>You can navigate to: <a target='_blank' href='" +
     JOB_OPEN_EDIT_PATH +
     "'>Edit Job Database</a></p>"
@@ -74,12 +76,14 @@ function loadBlogData() {
     "<p class='heading'><a target='_blank' href='" +
     BLOG_LIST_PATH +
     "'>API Path</a></p>" +
+    "</br>" +
     "<p class='heading'>API Status Code and Response Time</p>" +
     "<p class='heading'>Status Code: <span id='statusCode'>None</span></p>" +
     "<p class='heading'>Response Time: <span id='responseTime'></span>0 ms</p>" +
-    "<button class='api-button' onclick=\"makeApiRequest('" +
+    "<button class='apply-button api-button' onclick=\"makeApiRequest('" +
     BLOG_LIST_PATH +
     "')\">Make API Request</button>" +
+    "</br>" +
     "<p class='heading'>You can navigate to: <a target='_blank' href='" +
     BLOG_LIST_EDIT_PATH +
     "'>Edit Blog Database</a></p>"
