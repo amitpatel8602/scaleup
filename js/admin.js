@@ -10,8 +10,9 @@ function genrateData() {
       "<form>" +
       "<label for='dataSelect' id='label1'>Select a database for:</label>" +
       "<select name='data' id='data'>" +
-      "<option value='job'>Job</option>" +
       "<option value='blog'>Blog</option>" +
+      "<option value='job'>Job</option>" +
+      "<option value='quote'>Quote</option>" +
       "</select>" +
       "<br><br>" +
       "<input type='submit' value='Submit' class='apply-button right'>" +
@@ -22,14 +23,17 @@ function genrateData() {
     var query = new URLSearchParams(location.search);
     var val = query.get("data");
     if (val == "job") {
-      var textjob = loadJobData();
+      var textjob = loadData(JOB_OPEN_PATH, JOB_OPEN_EDIT_PATH);
       datapage.innerHTML = afterHtml + textjob;
+      document.getElementById("data").value = "job";
     } else if (val == "blog") {
-      var textblog = loadBlogData();
+      var textblog = loadData(BLOG_LIST_PATH, BLOG_LIST_EDIT_PATH);
       datapage.innerHTML = afterHtml + textblog;
-      document.getElementById("data").value = "blog";
+    } else if (val == "quote") {
+      var textblog = loadData(QUOTE_API_PATH, null);
+      datapage.innerHTML = afterHtml + textblog;
+      document.getElementById("data").value = "quote";
     }
-    //console.log();
   } else {
     document.title = "Not found";
     datapage.innerHTML =
@@ -53,41 +57,27 @@ function logout() {
   }, 3000);
 }
 
-function loadJobData() {
-  return (
+function loadData(path, editPath) {
+  var val =
     "<p class='heading'><a target='_blank' href='" +
-    JOB_OPEN_PATH +
+    path +
     "'>API Path</a></p>" +
     "</br>" +
     "<p class='heading'>API Status Code and Response Time</p>" +
     "<p class='heading'>Status Code: <span id='statusCode'>None</span></p>" +
     "<p class='heading'>Response Time: <span id='responseTime'></span>0 ms</p>" +
     "<button class='apply-button api-button' onclick=\"makeApiRequest('" +
-    JOB_OPEN_PATH +
+    path +
     "')\">Make API Request</button>" +
-    "</br>" +
-    "<p class='heading'>You can navigate to: <a target='_blank' href='" +
-    JOB_OPEN_EDIT_PATH +
-    "'>Edit Job Database</a></p>"
-  );
-}
-function loadBlogData() {
-  return (
-    "<p class='heading'><a target='_blank' href='" +
-    BLOG_LIST_PATH +
-    "'>API Path</a></p>" +
-    "</br>" +
-    "<p class='heading'>API Status Code and Response Time</p>" +
-    "<p class='heading'>Status Code: <span id='statusCode'>None</span></p>" +
-    "<p class='heading'>Response Time: <span id='responseTime'></span>0 ms</p>" +
-    "<button class='apply-button api-button' onclick=\"makeApiRequest('" +
-    BLOG_LIST_PATH +
-    "')\">Make API Request</button>" +
-    "</br>" +
-    "<p class='heading'>You can navigate to: <a target='_blank' href='" +
-    BLOG_LIST_EDIT_PATH +
-    "'>Edit Blog Database</a></p>"
-  );
+    "</br>";
+  if (editPath != null) {
+    var editHtml =
+      "<p class='heading'>You can navigate to: <a target='_blank' href='" +
+      editPath +
+      "'>Edit Job Database</a></p>";
+    return val + editHtml;
+  }
+  return val;
 }
 
 function makeApiRequest(apiUrl) {
