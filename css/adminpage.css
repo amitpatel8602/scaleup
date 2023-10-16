@@ -21,3 +21,7 @@
 .welcome {
   padding-left: 30px;
 }
+.api-button {
+  display: block;
+  margin: 0 auto;
+}

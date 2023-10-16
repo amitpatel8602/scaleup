@@ -1,3 +1,4 @@
+var val;
 function genrateData() {
   var prev = document.referrer;
   var datapage = document.getElementsByClassName("loadAdmin")[0];
@@ -57,6 +58,12 @@ function loadJobData() {
     "<p class='heading'><a target='_blank' href='" +
     JOB_OPEN_PATH +
     "'>API Path</a></p>" +
+    "<p class='heading'>API Status Code and Response Time</p>" +
+    "<p class='heading'>Status Code: <span id='statusCode'>None</span></p>" +
+    "<p class='heading'>Response Time: <span id='responseTime'></span>0 ms</p>" +
+    "<button class='api-button' onclick=\"makeApiRequest('" +
+    JOB_OPEN_PATH +
+    "')\">Make API Request</button>" +
     "<p class='heading'>You can navigate to: <a target='_blank' href='" +
     JOB_OPEN_EDIT_PATH +
     "'>Edit Job Database</a></p>"
@@ -67,8 +74,32 @@ function loadBlogData() {
     "<p class='heading'><a target='_blank' href='" +
     BLOG_LIST_PATH +
     "'>API Path</a></p>" +
+    "<p class='heading'>API Status Code and Response Time</p>" +
+    "<p class='heading'>Status Code: <span id='statusCode'>None</span></p>" +
+    "<p class='heading'>Response Time: <span id='responseTime'></span>0 ms</p>" +
+    "<button class='api-button' onclick=\"makeApiRequest('" +
+    BLOG_LIST_PATH +
+    "')\">Make API Request</button>" +
     "<p class='heading'>You can navigate to: <a target='_blank' href='" +
     BLOG_LIST_EDIT_PATH +
     "'>Edit Blog Database</a></p>"
   );
+}
+
+function makeApiRequest(apiUrl) {
+  const startTime = new Date().getTime(); // Record the start time
+
+  fetch(apiUrl)
+    .then((response) => {
+      const endTime = new Date().getTime(); // Record the end time
+      const responseTime = endTime - startTime; // Calculate response time
+
+      document.getElementById("statusCode").textContent = response.status;
+      document.getElementById("responseTime").textContent = responseTime;
+    })
+    .catch((error) => {
+      console.error("API request error:", error);
+      document.getElementById("statusCode").textContent = "Error";
+      document.getElementById("responseTime").textContent = "N/A";
+    });
 }
