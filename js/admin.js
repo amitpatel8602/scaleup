@@ -65,7 +65,7 @@ function loadData(path, editPath) {
     "</br>" +
     "<p class='heading'>API Status Code and Response Time</p>" +
     "<p class='heading'>Status Code: <span id='statusCode'>None</span></p>" +
-    "<p class='heading'>Response Time: <span id='responseTime'></span>0 ms</p>" +
+    "<p class='heading'>Response Time: <span id='responseTime'>None</span></p>" +
     "<button class='apply-button api-button' onclick=\"makeApiRequest('" +
     path +
     "')\">Make API Request</button>" +
@@ -89,7 +89,7 @@ function makeApiRequest(apiUrl) {
       const responseTime = endTime - startTime; // Calculate response time
 
       document.getElementById("statusCode").textContent = response.status;
-      document.getElementById("responseTime").textContent = responseTime;
+      document.getElementById("responseTime").textContent = responseTime + "ms";
     })
     .catch((error) => {
       console.error("API request error:", error);
