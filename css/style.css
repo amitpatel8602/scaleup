@@ -182,6 +182,12 @@ footer {
     float: right;
     margin-top: -15px;
     margin-right: 50px;
+    inline-size: 400px;
+    word-wrap: break-word;
+  }
+  #new-right {
+    inline-size: 400px;
+    word-wrap: break-word;
   }
 }
 
