@@ -40,9 +40,7 @@ $.getJSON(BLOG_LIST_PATH, function (data) {
       blogListing.append("<p>Author: " + listing.author + "</p>");
       blogListing.append("<p>Date: " + listing.date + "</p>");
       blogListing.append(
-        '<p class="blog-desc">Description: ' +
-          descriptionVal(listing, i) +
-          "</p>"
+        '<p class="blog-desc">Description: ' + descriptionVal(listing) + "</p>"
       );
       //blogListing.append("<p>Tag: " + listing.tag + "</p>");
       blogListing.append("<p>Source: " + listing.source + "</p>");
@@ -65,25 +63,13 @@ $.getJSON(BLOG_LIST_PATH, function (data) {
   }
 });
 
-function descriptionVal(listing, ind) {
+function descriptionVal(listing) {
   var values = listing.description;
   var arr = values.split(" ");
   var limit = 50;
   if (arr.length > limit) {
-    return (
-      arr.slice(0, limit).join(" ") +
-      "...<button class='load-more' onclick='loadMore(\"" +
-      values +
-      '", ' +
-      ind +
-      ")'>Load More</button>"
-    );
+    return arr.slice(0, limit).join(" ") + "...";
   } else {
     return values;
   }
-}
-function loadMore(values, ind) {
-  var data = document.getElementsByClassName("blog-desc");
-  data[data.length - ind - 1].innerHTML =
-    '<p class="blog-desc">Description: ' + values + "</p>";
 }
