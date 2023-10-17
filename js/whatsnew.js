@@ -32,9 +32,9 @@ fetch(JOB_OPEN_PATH)
       "</strong>" +
       "</p>" +
       "<p>" +
-      loop.date +
+      globalDate(loop.date) +
       " - " +
-      loop.lastdate +
+      globalDate(loop.lastdate) +
       "</p>" +
       "<p>" +
       desc +
@@ -72,7 +72,7 @@ fetch(BLOG_LIST_PATH)
       "</strong>" +
       "</p>" +
       "<p>" +
-      loop.date +
+      globalDate(loop.date) +
       "</p>" +
       "<p>" +
       loop.description +

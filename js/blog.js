@@ -38,7 +38,7 @@ $.getJSON(BLOG_LIST_PATH, function (data) {
       }
 
       blogListing.append("<p>Author: " + listing.author + "</p>");
-      blogListing.append("<p>Date: " + listing.date + "</p>");
+      blogListing.append("<p>Date: " + globalDate(listing.date) + "</p>");
       blogListing.append(
         '<p class="blog-desc">Description: ' + descriptionVal(listing) + "</p>"
       );

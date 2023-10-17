@@ -1,3 +1,18 @@
+const months = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 function startTime() {
   var today = new Date();
   var hr = today.getHours();
@@ -12,34 +27,12 @@ function startTime() {
   sec = checkTime(sec);
   document.getElementById("clock").innerHTML =
     hr + ":" + min + ":" + sec + " " + ap;
-
-  var months = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
-  var days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-  var curWeekDay = days[today.getDay()];
+  var curWeekDay = today.getDay();
   var curDay = today.getDate();
-  var curMonth = months[today.getMonth()];
+  var curMonth = today.getMonth();
   var curYear = today.getFullYear();
   var date =
-    curWeekDay +
-    ", " +
-    checkTime(today.getMonth()) +
-    "/" +
-    checkTime(today.getDate()) +
-    "/" +
-    curYear;
+    days[curWeekDay] + ", " + months[curMonth] + " " + curDay + ", " + curYear;
   document.getElementById("date").innerHTML = date;
 
   var time = setTimeout(function () {
@@ -52,4 +45,11 @@ function checkTime(i) {
     i = "0" + i;
   }
   return i;
+}
+
+function globalDate(dateObj) {
+  var [month, day, year] = dateObj.split("/");
+  var monthName = months[parseInt(month) - 1];
+  var formattedDate = `${monthName} ${day}, ${year}`;
+  return formattedDate;
 }
