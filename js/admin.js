@@ -47,7 +47,6 @@ function genrateData() {
 
 function logout() {
   var datapage = document.getElementsByClassName("loadAdmin")[0];
-  console.log(datapage);
   datapage.innerHTML =
     "<h1 class='heading'>Logging Out...</h1>" +
     "<p class='heading'>you are redirecting to Scale up home page. Please wait</p>";

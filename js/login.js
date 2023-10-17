@@ -30,7 +30,6 @@ function clear() {
 }
 
 function changeImage() {
-  console.log("print");
   var image = document.getElementsByClassName("img-fluid");
   if (
     image[0].src ==

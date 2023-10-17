@@ -2,7 +2,6 @@ $.getJSON(BLOG_LIST_PATH, function (data) {
   var listings = data;
   listings.sort(function (a, b) {
     var c = new Date(a.date).getTime();
-    //console.log(c);
     var d = new Date(b.date).getTime();
     return c > d ? 1 : -1;
   });
