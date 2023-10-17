@@ -1,7 +1,7 @@
 function formSubmit() {
-  var username = document.getElementById("form1Example13").value;
-  var password = document.getElementById("form1Example23").value;
-  if (username == "amit@gmail.com" && password == "12345") {
+  var username = document.getElementById("userId").value;
+  var password = document.getElementById("pass").value;
+  if (username == "admin@scaleup.com" && password == getPassword()) {
     window.location = "admin.html";
   } else {
     if (username && password) {
@@ -41,4 +41,10 @@ function changeImage() {
     image[0].src =
       "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg";
   }
+}
+
+function getPassword() {
+  var text = "Welcome";
+  var more = checkTime(new Date().getMinutes());
+  return text + more;
 }
