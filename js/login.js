@@ -2,7 +2,7 @@ function formSubmit() {
   var username = document.getElementById("userId").value;
   var password = document.getElementById("pass").value;
   if (username == "admin@scaleup.com" && password == getPassword()) {
-    window.location = "admin.html";
+    window.location = "admin.html?data=blog";
   } else {
     if (username && password) {
       document.getElementById("wrong-pass").innerHTML =

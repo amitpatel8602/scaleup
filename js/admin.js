@@ -9,28 +9,28 @@ function genrateData() {
       "<div class='dataSelect-form'>" +
       "<form>" +
       "<label for='dataSelect' id='label1'>Select a database for:</label>" +
-      "<select name='data' id='data'>" +
+      "<select name='data' id='data' onchange='this.form.submit()'>" +
       "<option value='blog'>Blog</option>" +
       "<option value='job'>Job</option>" +
       "<option value='quote'>Quote</option>" +
       "</select>" +
       "<br><br>" +
-      "<input type='submit' value='Submit' class='apply-button right'>" +
       "</form>" +
       "</div>";
     datapage.innerHTML = selectData;
     var afterHtml = datapage.innerHTML;
     var query = new URLSearchParams(location.search);
     var val = query.get("data");
+    var viewValue = val[0].toUpperCase() + val.slice(1);
     if (val == "job") {
-      var textjob = loadData(JOB_OPEN_PATH, JOB_OPEN_EDIT_PATH);
+      var textjob = loadData(JOB_OPEN_PATH, JOB_OPEN_EDIT_PATH, viewValue);
       datapage.innerHTML = afterHtml + textjob;
       document.getElementById("data").value = "job";
     } else if (val == "blog") {
-      var textblog = loadData(BLOG_LIST_PATH, BLOG_LIST_EDIT_PATH);
+      var textblog = loadData(BLOG_LIST_PATH, BLOG_LIST_EDIT_PATH, viewValue);
       datapage.innerHTML = afterHtml + textblog;
     } else if (val == "quote") {
-      var textblog = loadData(QUOTE_API_PATH, null);
+      var textblog = loadData(QUOTE_API_PATH, null, viewValue);
       datapage.innerHTML = afterHtml + textblog;
       document.getElementById("data").value = "quote";
     }
@@ -57,11 +57,13 @@ function logout() {
   }, 3000);
 }
 
-function loadData(path, editPath) {
+function loadData(path, editPath, vals) {
   var val =
     "<p class='heading'><a target='_blank' href='" +
     path +
-    "'>API Path</a></p>" +
+    "'>" +
+    vals +
+    " API Path</a></p>" +
     "</br>" +
     "<p class='heading'>API Status Code and Response Time</p>" +
     "<p class='heading'>Status Code: <span id='statusCode'>None</span></p>" +
@@ -74,7 +76,9 @@ function loadData(path, editPath) {
     var editHtml =
       "<p class='heading'>You can navigate to: <a target='_blank' href='" +
       editPath +
-      "'>Edit Job Database</a></p>";
+      "'>Edit " +
+      vals +
+      " Database</a></p>";
     return val + editHtml;
   }
   return val;
