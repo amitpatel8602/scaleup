@@ -41,7 +41,7 @@ fetch(JOB_OPEN_PATH)
       "</p>" +
       applyButtonHtml +
       "<a " +
-      "href='job_list.html'class='apply-button right'" +
+      "href='jobs.html'class='apply-button right'" +
       ">Explore More</a>";
   })
   .catch((error) => {
