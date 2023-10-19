@@ -39,7 +39,9 @@ $.getJSON(BLOG_LIST_PATH, function (data) {
       blogListing.append("<p>Author: " + listing.author + "</p>");
       blogListing.append("<p>Date: " + globalDate(listing.date) + "</p>");
       blogListing.append(
-        '<p class="blog-desc">Description: ' + descriptionVal(listing) + "</p>"
+        '<p class="blog-desc">Description: ' +
+          descriptionVal(listing.description, 50) +
+          "</p>"
       );
       //blogListing.append("<p>Tag: " + listing.tag + "</p>");
       blogListing.append("<p>Source: " + listing.source + "</p>");
@@ -61,14 +63,3 @@ $.getJSON(BLOG_LIST_PATH, function (data) {
     );
   }
 });
-
-function descriptionVal(listing) {
-  var values = listing.description;
-  var arr = values.split(" ");
-  var limit = 50;
-  if (arr.length > limit) {
-    return arr.slice(0, limit).join(" ") + "...";
-  } else {
-    return values;
-  }
-}

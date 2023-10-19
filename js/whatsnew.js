@@ -11,7 +11,7 @@ fetch(JOB_OPEN_PATH)
     var jobExpiry = isExpired == undefined || !isExpired;
     var desc = !jobExpiry
       ? "<p class='expired'>This job is expired.</p>"
-      : loop.description;
+      : descriptionVal(loop.description, 15);
     var applyClass = jobExpiry
       ? "class='apply-button'"
       : 'class="apply-button disabled"';
@@ -75,7 +75,7 @@ fetch(BLOG_LIST_PATH)
       globalDate(loop.date) +
       "</p>" +
       "<p>" +
-      loop.description +
+      descriptionVal(loop.description, 15) +
       "</p>" +
       '<a href="' +
       loop.more +

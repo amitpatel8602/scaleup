@@ -19,7 +19,9 @@ $.getJSON(JOB_OPEN_PATH, function (data) {
       jobListing.append(
         "<p>Last Date: " + globalDate(listing.lastdate) + "</p>"
       );
-      jobListing.append("<p>Description: " + listing.description + "</p>");
+      jobListing.append(
+        "<p>Description: " + descriptionVal(listing.description, 50) + "</p>"
+      );
       jobListing.append("<p>Location: " + listing.location + "</p>");
       if (isExpired) {
         jobListing.append('<p class="expired">Expired</p>');
