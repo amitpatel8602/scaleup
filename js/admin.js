@@ -13,6 +13,7 @@ function genrateData() {
       "<option value='blog'>Blog</option>" +
       "<option value='job'>Job</option>" +
       "<option value='quote'>Quote</option>" +
+      "<option value='image'>Image</option>" +
       "</select>" +
       "<br><br>" +
       "</form>" +
@@ -33,6 +34,10 @@ function genrateData() {
       var textblog = loadData(QUOTE_API_PATH, null, viewValue);
       datapage.innerHTML = afterHtml + textblog;
       document.getElementById("data").value = "quote";
+    } else if (val == "image") {
+      var textblog = loadData(RANDOM_IMAGE, null, viewValue);
+      datapage.innerHTML = afterHtml + textblog;
+      document.getElementById("data").value = "image";
     }
   } else {
     document.title = "Not found";
