@@ -10,18 +10,9 @@ fetch(JOB_OPEN_PATH)
     var isExpired = checkJobExpired(loop);
     var jobExpiry = isExpired == undefined || !isExpired;
     var desc = !jobExpiry
-      ? "<p class='expired'>This job is expired.</p>"
+      ? descriptionVal(loop.description, 15) +
+        "</br><p class='expired'>This job is expired.</p>"
       : descriptionVal(loop.description, 15);
-    var applyClass = jobExpiry
-      ? "class='apply-button'"
-      : 'class="apply-button disabled"';
-    var applyButtonHtml =
-      '<a href="' +
-      loop.apply +
-      '"' +
-      ' target="_blank"' +
-      applyClass +
-      ">Apply</a>";
     data.innerHTML =
       "<h3>Job</h3>" +
       "<p>" +
@@ -39,10 +30,7 @@ fetch(JOB_OPEN_PATH)
       "<p>" +
       desc +
       "</p>" +
-      applyButtonHtml +
-      "<a " +
-      "href='jobs.html'class='apply-button right'" +
-      ">Explore More</a>";
+      returnApplyExplore(jobExpiry, loop);
   })
   .catch((error) => {
     isDataAtLeft = false;
@@ -101,4 +89,22 @@ function checkJobExpired(listing) {
   var d1 = new Date();
   var d2 = new Date(listing.lastdate);
   return d1 > d2;
+}
+
+function returnApplyExplore(jobExpiry, loop) {
+  if (jobExpiry) {
+    return (
+      '<a href="' +
+      loop.apply +
+      '"' +
+      ' target="_blank" class="apply-button"' +
+      ">Apply</a>" +
+      "<a href='jobs.html' class='apply-button right'" +
+      ">Explore More</a>"
+    );
+  } else {
+    return (
+      "<a href='jobs.html' class='apply-button left'" + ">Explore More</a>"
+    );
+  }
 }
