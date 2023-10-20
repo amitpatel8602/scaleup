@@ -3,6 +3,10 @@
   height: 73px;
   float: left;
   margin-right: 10px;
+  border-radius: 100%;
+}
+#logo:hover {
+  transform: scale(1.05);
 }
 
 #company-name {
