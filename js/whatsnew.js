@@ -7,8 +7,7 @@ fetch(JOB_OPEN_PATH)
     sortArray(joblistings);
     var data = document.getElementById("new-right");
     var loop = joblistings[val];
-    var isExpired = checkJobExpired(loop);
-    var jobExpiry = isExpired == undefined || !isExpired;
+    var jobExpiry = checkJobExpired(loop);
     var desc = !jobExpiry
       ? descriptionVal(loop.description, 15) +
         "</br><p class='expired'>This job is expired.</p>"
@@ -86,9 +85,9 @@ function sortArray(arr) {
 }
 
 function checkJobExpired(listing) {
-  var d1 = new Date();
-  var d2 = new Date(listing.lastdate);
-  return d1 > d2;
+  var d1 = new Date().getDate();
+  var d2 = new Date(listing.lastdate).getDate();
+  return d1 <= d2;
 }
 
 function returnApplyExplore(jobExpiry, loop) {

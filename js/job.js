@@ -23,11 +23,11 @@ $.getJSON(JOB_OPEN_PATH, function (data) {
         "<p>Description: " + descriptionVal(listing.description, 50) + "</p>"
       );
       jobListing.append("<p>Location: " + listing.location + "</p>");
-      if (isExpired) {
+      if (!isExpired) {
         jobListing.append('<p class="expired">Expired</p>');
       }
       jobListing.append(
-        !isExpired
+        isExpired
           ? '<a href="' +
               listing.apply +
               '"' +
@@ -45,7 +45,8 @@ $.getJSON(JOB_OPEN_PATH, function (data) {
 });
 
 function checkJobExpired(listing) {
-  var d1 = new Date();
-  var d2 = new Date(listing.lastdate);
-  return d1 > d2;
+  var d1 = new Date().getDate();
+  var d2 = new Date(listing.lastdate).getDate();
+  console.log(d1, d2, d1 <= d2);
+  return d1 <= d2;
 }
