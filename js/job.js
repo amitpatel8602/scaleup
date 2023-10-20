@@ -47,6 +47,5 @@ $.getJSON(JOB_OPEN_PATH, function (data) {
 function checkJobExpired(listing) {
   var d1 = new Date().getDate();
   var d2 = new Date(listing.lastdate).getDate();
-  console.log(d1, d2, d1 <= d2);
   return d1 <= d2;
 }
