@@ -239,3 +239,21 @@ footer {
 #scroll-to-top-button:hover {
   background-color: #0056b3;
 }
+input[type="text"] {
+  width: 80%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+@media only screen and (min-width: 768px) {
+  input[type="text"] {
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  input[type="text"] {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}

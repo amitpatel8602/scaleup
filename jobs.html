@@ -31,6 +31,7 @@
       </nav>
     </header>
     <h2 id="job-heading">Latest Job Openings...</h2>
+    <input type="text" id="searchInput" placeholder="Search" />
     <div id="job-listings">
       <div class="job-listing"></div>
     </div>
@@ -47,5 +48,114 @@
       </div>
       <div id="copyright">Copyright © 2023 SCALE UP</div>
     </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const searchInput = document.getElementById("searchInput");
+        const resultsContainer = document.getElementById("job-listings");
+
+        let latestData = []; // Variable to store the latest data
+        let searchTimeout; // Variable to store the search timeout
+
+        function fetchData(apiUrl) {
+          return fetch(apiUrl).then((response) => response.json());
+        }
+
+        function search() {
+          // Clear the previous search timeout
+          clearTimeout(searchTimeout);
+
+          const searchTerm = searchInput.value.toLowerCase();
+          const apiUrl = JOB_OPEN_PATH; // Replace with your API endpoint
+
+          // Delay the search by 1 second after the user stops typing
+          searchTimeout = setTimeout(() => {
+            // Clear previous results
+            resultsContainer.innerHTML = "";
+
+            // Fetch data from the API
+            fetchData(apiUrl)
+              .then((data) => {
+                latestData = data; // Store the latest data
+
+                const uniqueData = [];
+                const titleSet = new Set();
+
+                // Filter and store unique items in uniqueData array
+                data.forEach((item) => {
+                  if (
+                    item.title.toLowerCase().includes(searchTerm) &&
+                    !titleSet.has(item.title)
+                  ) {
+                    titleSet.add(item.title);
+                    uniqueData.push(item);
+                  }
+                });
+                uniqueData.sort(function (a, b) {
+                  var c = new Date(a.date).getTime();
+                  var d = new Date(b.date).getTime();
+                  return c < d ? 1 : -1;
+                });
+                // Display unique results
+                if (uniqueData.length > 0) {
+                  uniqueData.forEach((item) => {
+                    const resultItem = document.createElement("div");
+                    var isExpired = checkJobExpired(item);
+                    var apply = isExpired
+                      ? '<a href="' +
+                        item.apply +
+                        '"' +
+                        ' target="_blank" class="apply-button">Apply</a>'
+                      : "";
+                    var expiredText = !isExpired
+                      ? '<p class="expired">Expired</p>'
+                      : "";
+                    resultItem.innerHTML =
+                      '<div class="job-listing">' +
+                      "<h3>" +
+                      item.title +
+                      "</h3>" +
+                      "<p>Company: " +
+                      item.companyname +
+                      "</p>" +
+                      "<p>Category: " +
+                      item.category +
+                      "</p>" +
+                      "<p>Date: " +
+                      globalDate(item.date) +
+                      "</p>" +
+                      "<p>Last Date: " +
+                      globalDate(item.lastdate) +
+                      "</p>" +
+                      "<p>Description: " +
+                      descriptionVal(item.description, 50) +
+                      "</p>" +
+                      "<p>Location: " +
+                      item.location +
+                      "</p>" +
+                      expiredText +
+                      apply;
+                    resultsContainer.appendChild(resultItem);
+                  });
+                } else {
+                  resultsContainer.innerHTML =
+                    "<p id='job-heading'>No results found.</p>";
+                }
+              })
+              .catch((error) => {
+                console.error("Error fetching data: ", error);
+              });
+          }, 500); // Adjust the delay to your preference (1 second = 1000 milliseconds)
+        }
+
+        // Event listener for input field
+        searchInput.addEventListener("input", search);
+
+        function checkJobExpired(listing) {
+          var d1 = new Date().getDate();
+          var d2 = new Date(listing.lastdate).getDate();
+          return d1 <= d2;
+        }
+      });
+    </script>
   </body>
 </html>

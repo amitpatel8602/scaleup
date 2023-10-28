@@ -1,5 +1,4 @@
 window.onscroll = function () {
-  console.log(document.body.scroll);
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
     document.getElementById("back-to-top").style.display = "block";
   } else {
