@@ -1,7 +1,7 @@
 function formSubmit() {
   var username = document.getElementById("userId").value;
   var password = document.getElementById("pass").value;
-  if (username == "admin@scaleup.com" && password == getPassword()) {
+  if (username == "admin@scaleup.org.in" && password == getPassword()) {
     window.location = "admin.html?data=blog";
   } else {
     if (username && password) {
