@@ -67,6 +67,6 @@
 }
 @media only screen and (max-width: 768px) {
   #body-contact {
-    background-image: url(../images/back-mobile.jpg);
+    background-image: url(../images/parallaxbg.jpg);
   }
 }

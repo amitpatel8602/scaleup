@@ -213,7 +213,12 @@ footer {
   color: red;
 }
 .login-body {
-  background-color: #fff;
+  background-color: #fff !important;
+}
+@media only screen and (min-width: 768px) {
+  .login-body {
+    overflow: hidden;
+  }
 }
 .img-fluid {
   height: 350px;
