@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="css/postblog.css" rel="stylesheet" />
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/postblog.js"></script>
+    <title>Scale Up | Post Your Blog</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+  </head>
+
+  <body>
+    <a class="left-link" href="index.html">Home</a>
+    <a class="right-link" href="blogs.html">Blogs</a>
+    <div class="formWrapper">
+      <h1>Post Your Blog</h1>
+      <form id="myform">
+        <div class="formGroup">
+          <label for="name">Name:</label>
+          <input
+            id="name"
+            type="text"
+            name="name"
+            placeholder="Enter Your Name"
+            required
+          />
+        </div>
+        <div class="formGroup">
+          <label for="email">Email:</label>
+          <input
+            id="email"
+            type="text"
+            name="email"
+            placeholder="Enter Your Name"
+            required
+          />
+        </div>
+        <div class="formGroup">
+          <label for="title">Blog Title:</label>
+          <input
+            id="title"
+            type="text"
+            name="title"
+            placeholder="Enter Title"
+            required
+          />
+        </div>
+        <div class="formGroup">
+          <label for="blog">Blog:</label>
+          <br />
+          <textarea
+            id="blog"
+            name="blog"
+            rows="20"
+            placeholder="Write your blog..."
+            required
+          ></textarea>
+        </div>
+        <div class="formGroup">
+          <input type="submit" value="Submit Blog" class="submitBtn" />
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
