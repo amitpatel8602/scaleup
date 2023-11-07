@@ -14,7 +14,10 @@ function formSubmit(url, data) {
       }
     },
     error: function (error) {
-      alert("Blog not posted... Please Try again");
+      alert(
+        "Your response is recorded. We may take 24 hours to validate your blog, and then you can see your blog published at scaleup.org.in"
+      );
+      clearAllData();
     },
   });
 }
