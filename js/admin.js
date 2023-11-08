@@ -8,12 +8,13 @@ function genrateData() {
       "<h1 class='heading welcome'>Welcome Admin!</h1>" +
       "<div class='dataSelect-form'>" +
       "<form>" +
-      "<label for='dataSelect' id='label1'>Select a database for:</label>" +
+      "<label for='dataSelect' id='label1'>Select for:</label>" +
       "<select name='data' id='data' onchange='this.form.submit()'>" +
       "<option value='blog'>Blog</option>" +
       "<option value='job'>Job</option>" +
       "<option value='quote'>Quote</option>" +
       "<option value='image'>Image</option>" +
+      "<option value='postblog'>Post Blog Data</option>" +
       "</select>" +
       "<br><br>" +
       "</form>" +
@@ -38,6 +39,11 @@ function genrateData() {
       var textblog = loadData(RANDOM_IMAGE, null, viewValue);
       datapage.innerHTML = afterHtml + textblog;
       document.getElementById("data").value = "image";
+    } else if (val == "postblog") {
+      var textblog =
+        "<p class='heading'><a target='_blank' href='https://docs.google.com/spreadsheets/d/1zeQcLJYgSTZpJfNymSV4ssm6_ApYkTBRynpJglZWjls/edit?resourcekey#gid=1655722951'>Open Google Form Excel</a></br>Please sign in with amitpatel8602@gmail.com</p>";
+      datapage.innerHTML = afterHtml + textblog;
+      document.getElementById("data").value = "postblog";
     }
   } else {
     document.title = "Not found";
