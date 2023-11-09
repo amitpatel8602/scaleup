@@ -10,6 +10,14 @@ $.getJSON(BLOG_LIST_PATH, function (data) {
   if (listings.length > 0) {
     for (var i = 0; i < listings.length; i++) {
       var listing = listings[i];
+      var seeMore, source;
+      if (listing.id == "blog") {
+        seeMore = listing.more;
+        source = listing.source;
+      } else {
+        seeMore = "/post.html?POST=" + listing.id;
+        source = "scaleup.org.in";
+      }
       var blogListing = $(".blog-listing").eq(i);
       blogListing.append('<div class="blog-listing">');
       blogListing.append("<h3>" + listing.title + "</h3>");
@@ -44,10 +52,10 @@ $.getJSON(BLOG_LIST_PATH, function (data) {
           "</p>"
       );
       //blogListing.append("<p>Tag: " + listing.tag + "</p>");
-      blogListing.append("<p>Source: " + listing.source + "</p>");
+      blogListing.append("<p>Source: " + source + "</p>");
       blogListing.append(
         '<a href="' +
-          listing.more +
+          seeMore +
           '"' +
           ' target="_blank" class="apply-button">See More</a>'
       );

@@ -33,7 +33,11 @@
     </header>
     <br />
     <h2 id="job-heading">Welcome To Our Blog Posts...</h2>
-    <input type="text" id="searchInput" placeholder="Search Blogs" />
+    <input
+      type="text"
+      id="searchInput"
+      placeholder="Search Blogs By Title,Description,Author"
+    />
     <div id="blog-listings">
       <div class="blog-listing"></div>
     </div>
@@ -86,8 +90,12 @@
                 // Filter and store unique items in uniqueData array
                 data.forEach((item) => {
                   if (
-                    item.title.toLowerCase().includes(searchTerm) &&
-                    !titleSet.has(item.title)
+                    (item.title.toLowerCase().includes(searchTerm) &&
+                      !titleSet.has(item.title)) ||
+                    (item.description.toLowerCase().includes(searchTerm) &&
+                      !titleSet.has(item.description)) ||
+                    (item.author.toLowerCase().includes(searchTerm) &&
+                      !titleSet.has(item.author))
                   ) {
                     titleSet.add(item.title);
                     uniqueData.push(item);
@@ -102,6 +110,14 @@
                 if (uniqueData.length > 0) {
                   uniqueData.forEach((item) => {
                     const resultItem = document.createElement("div");
+                    var seeMore, source;
+                    if (item.id == "blog") {
+                      seeMore = item.more;
+                      source = item.source;
+                    } else {
+                      seeMore = "post.html?POST=" + item.id;
+                      source = "scaleup.org.in";
+                    }
                     var image = item.tag
                       ? '<img src="' +
                         "images/" +
@@ -133,10 +149,10 @@
                       descriptionVal(item.description, 50) +
                       "</p>" +
                       "<p>Source: " +
-                      item.source +
+                      source +
                       "</p>" +
                       '<a href="' +
-                      item.more +
+                      seeMore +
                       '"' +
                       ' target="_blank" class="apply-button">See More</a>';
                     resultsContainer.appendChild(resultItem);

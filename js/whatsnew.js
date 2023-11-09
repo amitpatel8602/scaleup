@@ -49,6 +49,12 @@ fetch(BLOG_LIST_PATH)
       data = document.getElementById("new-right");
     }
     var loop = bloglistings[val];
+    var seeMore;
+    if (loop.id == "blog") {
+      seeMore = loop.more;
+    } else {
+      seeMore = "/post.html?POST=" + loop.id;
+    }
     data.innerHTML =
       "<h3>Blog</h3>" +
       "<p>" +
@@ -65,7 +71,7 @@ fetch(BLOG_LIST_PATH)
       descriptionVal(loop.description, 15) +
       "</p>" +
       '<a href="' +
-      loop.more +
+      seeMore +
       '"' +
       ' target="_blank" class="apply-button">See Blog</a>' +
       "<a " +
