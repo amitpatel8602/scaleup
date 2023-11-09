@@ -10,9 +10,8 @@
   right: 0;
   top: 0;
 }
-body {
+.form-body {
   font-family: Arial, sans-serif;
-  background-color: #f1f1f1;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -26,6 +25,7 @@ body {
   border-radius: 5px;
   width: 80%;
   max-width: 1000px;
+  margin-right: 70px;
 }
 
 .formWrapper h1 {

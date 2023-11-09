@@ -2,7 +2,9 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="css/header.css" rel="stylesheet" />
     <link href="css/postblog.css" rel="stylesheet" />
+    <link href="css/footer.css" rel="stylesheet" />
     <script
       src="https://code.jquery.com/jquery-3.7.1.min.js"
       integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
@@ -14,56 +16,85 @@
   </head>
 
   <body>
-    <a class="left-link" href="index.html">Home</a>
-    <a class="right-link" href="blogs.html">Blogs</a>
-    <div class="formWrapper">
-      <h1>Post Your Blog</h1>
-      <form id="myform">
-        <div class="formGroup">
-          <label for="name">Name:</label>
-          <input
-            id="name"
-            type="text"
-            name="name"
-            placeholder="Enter Your Name"
-            required
-          />
-        </div>
-        <div class="formGroup">
-          <label for="email">Email:</label>
-          <input
-            id="email"
-            type="text"
-            name="email"
-            placeholder="Enter Your Name"
-            required
-          />
-        </div>
-        <div class="formGroup">
-          <label for="title">Blog Title:</label>
-          <input
-            id="title"
-            type="text"
-            name="title"
-            placeholder="Enter Title"
-            required
-          />
-        </div>
-        <div class="formGroup">
-          <label for="blog">Blog:</label>
-          <br />
-          <textarea
-            id="blog"
-            name="blog"
-            rows="20"
-            placeholder="Write your blog..."
-            required
-          ></textarea>
-        </div>
-        <div class="formGroup">
-          <input type="submit" value="Submit" class="submitBtn" />
-        </div>
-      </form>
+    <header>
+      <nav>
+        <a href="index.html">
+          <img src="images/logo.png" id="logo" alt="Logo" id="logo" />
+        </a>
+        <a href="index.html"
+          ><h1 id="company-name"><em>scale up</em></h1></a
+        >
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="jobs.html">Jobs</a></li>
+          <li><a href="blogs.html">Blogs</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="form-body">
+      <!--  <a class="left-link" href="index.html">Home</a>
+      <a class="right-link" href="blogs.html">Blogs</a>-->
+      <div class="formWrapper">
+        <h1>Post Your Blog</h1>
+        <form id="myform">
+          <div class="formGroup">
+            <label for="name">Name:</label>
+            <input
+              id="name"
+              type="text"
+              name="name"
+              placeholder="Enter Your Name"
+              required
+            />
+          </div>
+          <div class="formGroup">
+            <label for="email">Email:</label>
+            <input
+              id="email"
+              type="text"
+              name="email"
+              placeholder="Enter Your Name"
+              required
+            />
+          </div>
+          <div class="formGroup">
+            <label for="title">Blog Title:</label>
+            <input
+              id="title"
+              type="text"
+              name="title"
+              placeholder="Enter Title"
+              required
+            />
+          </div>
+          <div class="formGroup">
+            <label for="blog">Blog:</label>
+            <br />
+            <textarea
+              id="blog"
+              name="blog"
+              rows="20"
+              placeholder="Write your blog..."
+              required
+            ></textarea>
+          </div>
+          <div class="formGroup">
+            <input type="submit" value="Submit" class="submitBtn" />
+          </div>
+        </form>
+      </div>
     </div>
+    <footer>
+      <div id="footer-links">
+        <a href="index.html ">Home</a>
+        <a href="jobs.html">Jobs</a>
+        <a href="blogs.html">Blogs</a>
+        <a href="contact.html">Contact</a>
+        <a href="login.html">Login</a>
+      </div>
+      <div id="copyright">Copyright © 2023 SCALE UP</div>
+    </footer>
   </body>
 </html>
