@@ -5,10 +5,7 @@
   top: 0;
 }
 .right-link {
-  margin-right: 20px;
-  position: absolute;
-  right: 0;
-  top: 0;
+  float: right;
 }
 .form-body {
   font-family: Arial, sans-serif;
@@ -66,4 +63,8 @@
 
 .submitBtn:hover {
   background-color: #0056b3;
+}
+.i-button {
+  width: 20px;
+  height: 20px;
 }

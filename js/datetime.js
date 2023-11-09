@@ -32,7 +32,13 @@ function startTime() {
   var curMonth = today.getMonth();
   var curYear = today.getFullYear();
   var date =
-    days[curWeekDay] + ", " + months[curMonth] + " " + curDay + ", " + curYear;
+    days[curWeekDay] +
+    ", " +
+    months[curMonth] +
+    " " +
+    checkTime(curDay) +
+    ", " +
+    curYear;
   document.getElementById("date").innerHTML = date;
 
   var time = setTimeout(function () {
