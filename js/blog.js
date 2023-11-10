@@ -29,7 +29,7 @@ $.getJSON(BLOG_LIST_PATH, function (data) {
             listing.tag +
             ".png" +
             '"' +
-            ' class="blog-image" loading="lazy" alt="' +
+            ' class="blog-image" loading="lazy" title="' +
             listing.tag +
             '"></img>'
         );
@@ -38,7 +38,7 @@ $.getJSON(BLOG_LIST_PATH, function (data) {
           '<img src="' +
             "images/white_paper.png" +
             '"' +
-            ' class="blog-image" loading="lazy" alt="' +
+            ' class="blog-image" loading="lazy" title="' +
             "white_paper" +
             '"></img>'
         );

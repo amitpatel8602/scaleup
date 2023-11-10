@@ -13,6 +13,12 @@ $.getJSON(BLOG_LIST_PATH, function (data) {
         title.innerText = data.title;
         var desc = document.getElementById("post-desc");
         desc.innerHTML = "<p>" + data.description + "</p>";
+        if (data.description) {
+          var meta = document.createElement("meta");
+          meta.name = "description";
+          meta.content = data.description;
+          document.head.appendChild(meta);
+        }
         var author = document.getElementById("author-data");
         author.innerHTML = "<p>" + data.author + "</p>";
         var date = document.getElementById("post-date");
