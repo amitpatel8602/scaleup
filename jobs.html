@@ -6,7 +6,11 @@
     <link href="css/header.css" rel="stylesheet" />
     <link href="css/style.css" rel="stylesheet" />
     <link href="css/footer.css" rel="stylesheet" />
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
     <script src="js/constants.js"></script>
     <script src="js/datetime.js"></script>
     <script src="js/blog.js"></script>
@@ -34,12 +38,17 @@
       </nav>
     </header>
     <h2 id="job-heading">Latest Job Openings...</h2>
-    <input type="text" id="searchInput" placeholder="Search Jobs" />
+    <input
+      type="text"
+      id="searchInput"
+      placeholder="Search Jobs by Title, Company, Location"
+    />
     <div id="job-listings">
       <div class="job-listing"></div>
     </div>
     <div id="back-to-top" class="hidden">
-      <a href="#" id="scroll-to-top-button">Back to Top</a>
+      <!-- <a href="#" id="scroll-to-top-button">Back to Top</a> -->
+      <a href="#"><img id="back-to-top-img" src="images\back-to-top.png" /></a>
     </div>
     <footer>
       <div id="footer-links">
@@ -86,8 +95,12 @@
                 // Filter and store unique items in uniqueData array
                 data.forEach((item) => {
                   if (
-                    item.title.toLowerCase().includes(searchTerm) &&
-                    !titleSet.has(item.title)
+                    (item.title.toLowerCase().includes(searchTerm) &&
+                      !titleSet.has(item.title)) ||
+                    (item.companyname.toLowerCase().includes(searchTerm) &&
+                      !titleSet.has(item.companyname)) ||
+                    (item.location.toLowerCase().includes(searchTerm) &&
+                      !titleSet.has(item.location))
                   ) {
                     titleSet.add(item.title);
                     uniqueData.push(item);

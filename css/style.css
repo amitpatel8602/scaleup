@@ -166,6 +166,11 @@ section li {
   display: none;
 }
 
+#back-to-top-img {
+  height: 50px;
+  width: 50px;
+}
+
 #scroll-to-top-button {
   background-color: #007bff;
   color: #fff;

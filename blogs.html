@@ -6,7 +6,11 @@
     <link href="css/header.css" rel="stylesheet" />
     <link href="css/style.css" rel="stylesheet" />
     <link href="css/footer.css" rel="stylesheet" />
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
     <script src="js/constants.js"></script>
     <script src="js/datetime.js"></script>
     <script src="js/blog.js"></script>
@@ -37,14 +41,15 @@
     <input
       type="text"
       id="searchInput"
-      placeholder="Search Blogs By Title,Description,Author"
+      placeholder="Search Blogs By Title, Description, Author"
     />
     <div id="blog-listings">
       <div class="blog-listing"></div>
     </div>
     <br />
     <div id="back-to-top" class="hidden">
-      <a href="#" id="scroll-to-top-button">Back to Top</a>
+      <!-- <a href="#" id="scroll-to-top-button">Back to Top</a> -->
+      <a href="#"><img id="back-to-top-img" src="images\back-to-top.png" /></a>
     </div>
     <footer>
       <div id="footer-links">
