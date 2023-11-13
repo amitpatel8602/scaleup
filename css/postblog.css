@@ -15,7 +15,7 @@
   margin: 0;
 }
 
-.formWrapper {
+.main-form {
   background-color: #fff;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
@@ -25,7 +25,7 @@
   margin-right: 70px;
 }
 
-.formWrapper h1 {
+.main-form h1 {
   text-align: center;
 }
 

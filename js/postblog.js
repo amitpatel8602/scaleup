@@ -7,19 +7,20 @@ function formSubmit(url, data) {
     data: data,
     success: function (res) {
       if (res) {
-        alert(
-          "Your response is recorded. We may take 24 hours to validate your blog, and then you can see your blog published at scaleup.org.in"
-        );
-        clearAllData();
+        successMsg();
       }
     },
     error: function (error) {
-      alert(
-        "Your response is recorded. We may take 24 hours to validate your blog, and then you can see your blog published at scaleup.org.in"
-      );
-      clearAllData();
+      successMsg();
+      console.log("Success with internal errors");
     },
   });
+}
+function successMsg() {
+  alert(
+    "Your response is recorded. We may take 24 hours to validate your blog, and then you can see your blog published at scaleup.org.in"
+  );
+  clearAllData();
 }
 function validateEmail(email) {
   var emailPattern = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
