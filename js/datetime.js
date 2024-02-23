@@ -26,7 +26,7 @@ function startTime() {
   min = checkTime(min);
   sec = checkTime(sec);
   document.getElementById("clock").innerHTML =
-    hr + ":" + min + ":" + sec + " " + ap;
+    hr + ":" + min + ":" + sec + " " + ap + " IST";
   var curWeekDay = today.getDay();
   var curDay = today.getDate();
   var curMonth = today.getMonth();
