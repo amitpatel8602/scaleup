@@ -13,4 +13,5 @@ fetch(QUOTE_API_PATH)
   })
   .catch((error) => {
     console.error(error);
+    document.getElementById("quote-section").style.visibility = "hidden";
   });
