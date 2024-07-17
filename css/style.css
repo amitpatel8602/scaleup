@@ -64,6 +64,8 @@ section li {
 
 #main-para {
   text-align: center;
+  font-size: 18px;
+  font-weight: inherit;
 }
 
 #loader {
