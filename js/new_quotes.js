@@ -1,6 +1,5 @@
-fetch(ZEN_QUOTE_API_PATH)
+fetch(DUMMY_QUOTE_API_PATH)
   .then((response) => {
-    console.log(response);
     if (response.ok) {
       return response.json();
     } else {
@@ -8,9 +7,8 @@ fetch(ZEN_QUOTE_API_PATH)
     }
   })
   .then((data) => {
-    console.log(data);
     var quote = document.getElementById("main-para");
-    var putData = data.q + "    \n-" + data.a;
+    var putData = data.quote + "    \n-" + data.author;
     quote.innerText = putData;
   })
   .catch((error) => {
