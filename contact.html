@@ -10,27 +10,14 @@
     <link href="css/footer.css" rel="stylesheet" />
     <link href="css/style.css" rel="stylesheet" />
     <link href="css/contact.css" rel="stylesheet" />
+    <script src="js/htmlinclude.js"></script>
     <title>Scale Up | Contact</title>
     <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
   </head>
 
   <body id="body-contact">
     <header>
-      <nav>
-        <a href="index.html">
-          <img src="images/logo.png" id="logo" alt="Logo" id="logo" />
-        </a>
-        <a href="index.html"
-          ><h1 id="company-name"><em>scale up</em></h1></a
-        >
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="jobs.html">Jobs</a></li>
-          <li><a href="blogs.html">Blogs</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="login.html">Login</a></li>
-        </ul>
-      </nav>
+      <include src="./header.html"></include>
     </header>
     <div class="main-area">
       <!-- Profile picture-->
@@ -52,60 +39,10 @@
         Ready Studio, Postman
       </div>
       <!-- Links-->
-      <a
-        href="https://drive.google.com/file/d/1V8PD1AqvPYzyQiU5pvn3l2AEjIRz2BU4/view?usp=drive_link"
-        target="_blank"
-        class="links"
-        >Winner of core value award at PS</a
-      >
-      <a
-        href="https://www.credly.com/badges/8b2e48aa-1f0f-41f1-83eb-29e5d65c7286/linked_in?t=s0lz65"
-        target="_blank"
-        class="links"
-        >Adobe Certified Expert - Adobe Experience Manager Sites Developer</a
-      >
-      <a
-        href="https://drive.google.com/file/d/1P441B7k0Sueam-8ye2cQ_AarSdWvZFHP/view?usp=sharing"
-        target="_blank"
-        class="links"
-        >Infosys Certified Software Programmer</a
-      ><a
-        href="mailto:amitpatel8602@gmail.com?subject=I%20want%20to%20join%20Scale%20Up%20community.&body=Hi%20Amit%2C%0A%0AI%20want%20to%20join%20scale%20up%20community%20as%20%5Bdeveloper%2Fcontent%20writer%2Fothers%5D.%0A%0APlease%20revert%20back%20on%20this%20mail%20for%20more%20information.%0A"
-        target="_blank"
-        class="links"
-        >Join Us</a
-      >
-      <a href="https://scaleup.org.in/" target="_blank" class="links"
-        >Scale up </a
-      ><a
-        href="https://drive.google.com/file/d/1QSw3139_6L36IwctxCqTG1vworx-3msf/view?usp=sharing"
-        target="_blank"
-        class="links"
-        >Resume</a
-      >
-      <a href="mailto:amitpatel8602@gmail.com" target="_blank" class="links"
-        >Email</a
-      ><a
-        href="https://www.linkedin.com/in/tech-amit-patel/"
-        target="_blank"
-        class="links"
-        >LinkedIn</a
-      ><a
-        href="https://www.instagram.com/amit_._patel/"
-        target="_blank"
-        class="links"
-        >Instagram</a
-      >
+      <include src="./contact-links.html"></include>
     </div>
     <footer>
-      <div id="footer-links">
-        <a href="index.html ">Home</a>
-        <a href="jobs.html">Jobs</a>
-        <a href="blogs.html">Blogs</a>
-        <a href="#">Contact</a>
-        <a href="login.html">Login</a>
-      </div>
-      <div id="copyright">Copyright © 2023 SCALE UP</div>
+      <include src="./footer.html"></include>
     </footer>
   </body>
 </html>

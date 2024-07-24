@@ -16,26 +16,15 @@
     <script src="js/blog.js"></script>
     <script src="js/job.js"></script>
     <script src="js/backtotop.js"></script>
+    <script src="js/htmlinclude.js"></script>
+
     <title>Scale Up | Jobs</title>
     <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
   </head>
 
   <body>
     <header>
-      <nav>
-        <a href="index.html">
-          <img src="images/logo.png" id="logo" alt="Logo" id="logo" />
-        </a>
-        <a href="index.html"
-          ><h1 id="company-name"><em>scale up</em></h1></a
-        >
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="blogs.html">Blogs</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="login.html">Login</a></li>
-        </ul>
-      </nav>
+      <include src="./header.html"></include>
     </header>
     <h2 id="job-heading">Latest Job Openings...</h2>
     <input
@@ -51,14 +40,7 @@
       <a href="#"><img id="back-to-top-img" src="images\back-to-top.png" /></a>
     </div>
     <footer>
-      <div id="footer-links">
-        <a href="index.html ">Home</a>
-        <a href="#">Jobs</a>
-        <a href="blogs.html">Blogs</a>
-        <a href="contact.html">Contact</a>
-        <a href="login.html">Login</a>
-      </div>
-      <div id="copyright">Copyright © 2023 SCALE UP</div>
+      <include src="./footer.html"></include>
     </footer>
     <script>
       document.addEventListener("DOMContentLoaded", function () {

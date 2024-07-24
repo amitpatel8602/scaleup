@@ -13,24 +13,12 @@
     <script src="js/constants.js"></script>
     <script src="js/post.js"></script>
     <script src="js/datetime.js"></script>
+    <script src="js/htmlinclude.js"></script>
     <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
   </head>
   <body>
     <header>
-      <nav>
-        <a href="index.html">
-          <img src="images/logo.png" id="logo" alt="Logo" id="logo" />
-        </a>
-        <a href="index.html"
-          ><h1 id="company-name"><em>scale up</em></h1></a
-        >
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="jobs.html">Jobs</a></li>
-          <li><a href="blogs.html">Blogs</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
+      <include src="./header.html"></include>
     </header>
 
     <div class="row">
@@ -59,13 +47,7 @@
     </div>
 
     <footer>
-      <div id="footer-links">
-        <a href="index.html ">Home</a>
-        <a href="jobs.html">Jobs</a>
-        <a href="blogs.html">Blogs</a>
-        <a href="contact.html">Contact</a>
-      </div>
-      <div id="copyright">Copyright © 2023 SCALE UP</div>
+      <include src="./footer.html"></include>
     </footer>
   </body>
 </html>

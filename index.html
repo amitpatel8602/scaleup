@@ -17,6 +17,7 @@
     <script src="js/datetime.js"></script>
     <script src="js/new_quotes.js"></script>
     <script src="js/whatsnew.js"></script>
+    <script src="js/htmlinclude.js"></script>
     <title>Scale Up</title>
     <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
   </head>
@@ -24,27 +25,14 @@
   <body onload="startTime()">
     <!-- <div id="loader"></div> -->
     <header>
-      <nav>
-        <a href="#">
-          <img src="images/logo.png" id="logo" alt="Logo" />
-        </a>
-        <a href="#home"
-          ><h1 id="company-name"><em>scale up</em></h1></a
-        >
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About Us</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="login.html">Login</a></li>
-          <li><a href="/sitemap.xml">Sitemap</a></li>
-        </ul>
-      </nav>
+      <include src="./header.html"></include>
     </header>
     <div id="clockdate">
       <div id="clock"></div>
       <div id="date"></div>
     </div>
     <br /><br /><br />
+    <!--Image section-->
     <div class="main-section">
       <img
         src="https://picsum.photos/1000/400"
@@ -55,10 +43,12 @@
     </div>
 
     <main>
+      <!--Quote section-->
       <section id="quote-section">
         <h2>Quote</h2>
         <h3 id="main-para"></h3>
       </section>
+      <!--Whats new section-->
       <section id="services" class="whats-new">
         <h2>What's New</h2>
         <ul>
@@ -66,82 +56,11 @@
           <li id="new-right"></li>
         </ul>
       </section>
-      <section id="services">
-        <h2>Services</h2>
-        <ul>
-          <li>
-            <a href="blogs.html" class="services-links">Blogs</a>
-          </li>
-          <li>
-            <a href="jobs.html" class="services-links">Jobs</a>
-          </li>
-          <li>
-            <a href="postblog.html" class="services-links">Post your own blog</a
-            ><img alt="new" src="images\new.gif" />
-          </li>
-        </ul>
-      </section>
-      <section id="references">
-        <h2>Knowledge</h2>
-        <ul>
-          <li>
-            <a
-              href="https://overapi.com/"
-              target="_blank"
-              class="services-links"
-              >Programming Cheet Sheet</a
-            >
-          </li>
-          <li>
-            <a
-              href="https://sourcedcode.com/"
-              target="_blank"
-              class="services-links"
-              >AEM resources</a
-            >
-          </li>
-          <li>
-            <a
-              href="https://github.com/apache/felix-dev/tree/9513c30769456583029613917de48842c528416b"
-              target="_blank"
-              class="services-links"
-              >Apache Felix Github</a
-            >
-          </li>
-        </ul>
-      </section>
-      <section id="about">
-        <h2>About Us</h2>
-        <p>
-          At <a href="#">Scale up</a>, we are passionate about all things tech.
-          We are a dedicated team of tech enthusiasts, programmers, and career
-          advisors who have come together to create a hub for anyone looking to
-          stay updated on the latest in technology, enhance their programming
-          skills, and explore exciting job opportunities in the tech industry.
-        </p>
-        <br />
-        <p>
-          <b>Join Us on the Tech Journey</b><br /><br />We invite you to join us
-          on this exciting tech journey. Whether you're an aspiring programmer,
-          a tech aficionado, or a job seeker in the tech industry,
-          <a href="#">Scale up</a> is your one-stop destination. Explore our
-          content, discover new opportunities, and stay updated with the
-          ever-evolving world of technology. Thank you for visiting us, and we
-          look forward to being a part of your tech adventure!
-        </p>
-      </section>
+      <include src="./services.html"></include>
+      <include src="./knowledge.html"></include>
+      <include src="./about.html"></include>
     </main>
 
-    <footer>
-      <div id="footer-links">
-        <a href="#">Home</a>
-        <a href="jobs.html">Jobs</a>
-        <a href="blogs.html">Blogs</a>
-        <a href="contact.html">Contact</a>
-        <a href="login.html">Login</a>
-        <a href="/sitemap.xml">Sitemap</a>
-      </div>
-      <div id="copyright">Copyright © 2023 SCALE UP</div>
-    </footer>
+    <footer><include src="./footer.html"></include></footer>
   </body>
 </html>
