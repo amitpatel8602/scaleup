@@ -7,6 +7,8 @@ const RANDOM_IMAGE = "https://picsum.photos/1000/400";
 const JOB_OPEN_EDIT_PATH = "https://www.npoint.io/docs/b55981b46615da93bb57";
 const BLOG_LIST_EDIT_PATH = "https://www.npoint.io/docs/fd0b712706a4831d4be4";
 
+const EXPERIENCE_START_DATE = "October 11, 2021";
+
 function descriptionVal(values, limit) {
   var arr = values.split(" ");
   if (arr.length > limit) {
