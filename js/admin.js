@@ -32,7 +32,7 @@ function genrateData() {
       var textblog = loadData(BLOG_LIST_PATH, BLOG_LIST_EDIT_PATH, viewValue);
       datapage.innerHTML = afterHtml + textblog;
     } else if (val == "quote") {
-      var textblog = loadData(QUOTE_API_PATH, null, viewValue);
+      var textblog = loadData(DUMMY_QUOTE_API_PATH, null, viewValue);
       datapage.innerHTML = afterHtml + textblog;
       document.getElementById("data").value = "quote";
     } else if (val == "image") {
