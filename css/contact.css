@@ -66,13 +66,7 @@
   background-color: #3e454b;
   color: white;
 }
-@media only screen and (min-width: 768px) {
-  #body-contact {
-    background-image: url(../images/back.jpg);
-  }
-}
-@media only screen and (max-width: 768px) {
-  #body-contact {
-    background-image: url(../images/parallaxbg.jpg);
-  }
+
+#body-contact {
+  background-image: url(../images/light.jpg);
 }
