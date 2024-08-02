@@ -1,12 +1,38 @@
 $.getJSON(EXPERIENCE_BIN, function (data) {
   var yearwisedata = data;
   var timeline = $(".timeline").eq(0);
+  var skillset = $(".skillset").eq(0);
   for (let index = 0; index < yearwisedata.length; index++) {
     var year = yearwisedata[index].year;
     var yearData = yearwisedata[index].yearData;
-    timeline.append(
-      `<button class="year" onclick="showDetails(this, '${year}', '${yearData}')">${year}</button>`
-    );
+    if (year !== "skill-data") {
+      timeline.append(
+        `<button class="year" onclick="showDetails(this, '${year}', '${yearData}')">${year}</button>`
+      );
+    } else {
+      var arrayset = [
+        "primary",
+        "secondary",
+        "success",
+        "danger",
+        "warning",
+        "info",
+        "dark",
+      ];
+      var skills = yearData.split(",");
+      console.log(skills);
+      skillset.append("<p>");
+      for (let index = 0; index < skills.length; index++) {
+        skillset.append(
+          '<button type="button" class="btn btn-outline-' +
+            arrayset[index % 7] +
+            '">' +
+            skills[index] +
+            "</button>"
+        );
+      }
+      skillset.append("</p>");
+    }
   }
 });
 
