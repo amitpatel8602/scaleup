@@ -29,6 +29,12 @@
 
 #exp {
   font-size: 14px;
+  padding-top: 10px;
+}
+
+#company-link {
+  text-decoration: none;
+  color: inherit;
 }
 
 .profile-skill {
@@ -69,4 +75,10 @@
 
 #body-contact {
   background-image: url(../images/light.jpg);
+}
+#right-img {
+  padding: 10px;
+  border-radius: 50%;
+  height: 25px;
+  width: 25px;
 }
