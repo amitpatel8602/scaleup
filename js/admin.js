@@ -14,6 +14,7 @@ function genrateData() {
       "<option value='job'>Job</option>" +
       "<option value='quote'>Quote</option>" +
       "<option value='image'>Image</option>" +
+      "<option value='experience'>Experience</option>" +
       "<option value='postblog'>Post Blog Data</option>" +
       "</select>" +
       "<br><br>" +
@@ -31,6 +32,10 @@ function genrateData() {
     } else if (val == "blog") {
       var textblog = loadData(BLOG_LIST_PATH, BLOG_LIST_EDIT_PATH, viewValue);
       datapage.innerHTML = afterHtml + textblog;
+    } else if (val == "experience") {
+      var textblog = loadData(EXPERIENCE_BIN, EXPERIENCE_BIN_PATH, viewValue);
+      datapage.innerHTML = afterHtml + textblog;
+      document.getElementById("data").value = "experience";
     } else if (val == "quote") {
       var textblog = loadData(DUMMY_QUOTE_API_PATH, null, viewValue);
       datapage.innerHTML = afterHtml + textblog;
