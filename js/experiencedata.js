@@ -20,7 +20,6 @@ $.getJSON(EXPERIENCE_BIN, function (data) {
         "dark",
       ];
       var skills = yearData.split(",");
-      console.log(skills);
       skillset.append("<p>");
       for (let index = 0; index < skills.length; index++) {
         skillset.append(
@@ -48,5 +47,5 @@ function showDetails(button, year, yearData) {
 
   // Update details
   const detailsDiv = document.getElementById("details");
-  detailsDiv.innerHTML = `<h2>${year}</h2><p>${yearData}</p>`;
+  detailsDiv.innerHTML = `<h4>${year}</h4><p>${yearData}</p>`;
 }
