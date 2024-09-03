@@ -29,7 +29,7 @@ body {
 }
 
 .year {
-  background-color: #007bff;
+  background-color: #333;
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -39,11 +39,11 @@ body {
   transition: background-color 0.3s;
 }
 .year.active {
-  background-color: #333;
+  background-color: green;
 }
 
 .year:hover {
-  background-color: #0056b3;
+  background-color: green;
 }
 
 .details {
@@ -67,4 +67,8 @@ body {
 
 .center {
   text-align: center;
+}
+
+#details-edu h4{
+  padding-top: 20px;
 }
