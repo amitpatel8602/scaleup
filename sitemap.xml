@@ -21,4 +21,7 @@
   <url>
     <loc>https://scaleup.org.in/experience.html</loc>
   </url>
+  <url>
+    <loc>https://scaleup.org.in/post.html?POST=*</loc>
+  </url>
 </urlset>
