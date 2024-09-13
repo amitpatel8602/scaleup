@@ -27,6 +27,7 @@ body {
   background-color: white;
   padding: 20px;
   margin-top: 20px;
+  word-wrap: break-word;
 }
 
 /* Clear floats after the columns */
@@ -45,4 +46,5 @@ body {
 .code-block{
   border: 2px solid gray;
   padding: 10px;
+  word-wrap: break-word;
 }
