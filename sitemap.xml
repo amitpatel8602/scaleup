@@ -22,6 +22,9 @@
     <loc>https://scaleup.org.in/experience.html</loc>
   </url>
   <url>
-    <loc>https://scaleup.org.in/post.html?POST=*</loc>
+    <loc>https://scaleup.org.in/post.html?POST=3</loc>
+  </url>
+  <url>
+    <loc>https://scaleup.org.in/post.html?POST=2</loc>
   </url>
 </urlset>
