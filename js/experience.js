@@ -15,12 +15,15 @@ setTimeout(() => {
     years--;
     months += 12;
   }
-  if (months == 0) {
+  if (months == 0 && dayDifference == 0) {
     document.getElementById("exp").innerText =
       "Total Experience - " + years + " years ";
   } else if(dayDifference == 0){
     document.getElementById("exp").innerText =
     "Total Experience - " + years + " years " + months + " months";
+  } else if(months == 0 && dayDifference != 0){
+    document.getElementById("exp").innerText =
+    "Total Experience - " + years + " years " + dayDifference + " days";
   }
   else {
     document.getElementById("exp").innerText =
