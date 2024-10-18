@@ -10,8 +10,9 @@ body {
 /* Create two unequal columns that floats next to each other */
 /* Left column */
 .leftcolumn {
-  float: left;
-  width: 75%;
+  margin: auto;
+  width: 60%;
+  padding: 10px;
 }
 
 /* Right column */
@@ -26,6 +27,7 @@ body {
   background-color: white;
   padding: 20px;
   margin-top: 20px;
+  margin-bottom: 20px;
   word-wrap: break-word;
 }
 
@@ -46,4 +48,7 @@ body {
   border: 2px solid gray;
   padding: 10px;
   word-wrap: break-word;
+}
+hr.solid {
+  border-top: 3px solid #bbb;
 }
