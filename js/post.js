@@ -15,9 +15,7 @@ $.getJSON(BLOG_LIST_PATH, function (data) {
         desc.innerHTML = "<p>" + data.description + "</p>";
         var copyEle = document.getElementById('code-block');
         var actual = copyEle.innerHTML;
-        console.log(actual);
         var val = actual.replaceAll('<nl>',"\n").replaceAll("</nl>",'');
-        console.log(val);
         copyEle.innerHTML = "";
         
         if (data.description) {
