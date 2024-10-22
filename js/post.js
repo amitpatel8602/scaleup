@@ -13,6 +13,13 @@ $.getJSON(BLOG_LIST_PATH, function (data) {
         title.innerText = data.title;
         var desc = document.getElementById("post-desc");
         desc.innerHTML = "<p>" + data.description + "</p>";
+        var copyEle = document.getElementById('code-block');
+        var actual = copyEle.innerHTML;
+        console.log(actual);
+        var val = actual.replaceAll('<nl>',"\n").replaceAll("</nl>",'');
+        console.log(val);
+        copyEle.innerHTML = "";
+        
         if (data.description) {
           var meta = document.createElement("meta");
           meta.name = "description";
@@ -23,6 +30,7 @@ $.getJSON(BLOG_LIST_PATH, function (data) {
         author.innerHTML = "<p>" + data.author + "</p>";
         var date = document.getElementById("post-date");
         date.innerHTML = "<p>" + globalDate(data.date) + "</p>";
+        copyEle.innerText = val;
       }
     }
   }
