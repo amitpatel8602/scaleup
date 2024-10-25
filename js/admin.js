@@ -16,6 +16,7 @@ function genrateData() {
       "<option value='image'>Image</option>" +
       "<option value='experience'>Experience</option>" +
       "<option value='postblog'>Post Blog Data</option>" +
+      "<option value='netspeed'>Net Speed UI</option>" +
       "</select>" +
       "<br><br>" +
       "</form>" +
@@ -49,6 +50,11 @@ function genrateData() {
         "<p class='heading'><a target='_blank' href='https://docs.google.com/spreadsheets/d/1zeQcLJYgSTZpJfNymSV4ssm6_ApYkTBRynpJglZWjls/edit?resourcekey#gid=1655722951'>Open Google Form Excel</a></br>Please sign in with amitpatel8602@gmail.com</p>";
       datapage.innerHTML = afterHtml + textblog;
       document.getElementById("data").value = "postblog";
+    }else if (val == "netspeed") {
+      var textblog =
+        "<p class='heading'><a href='/netspeed.html'>Net Speed UI</p>";
+      datapage.innerHTML = afterHtml + textblog;
+      document.getElementById("data").value = "netspeed";
     }
   } else {
     document.title = "Not found";

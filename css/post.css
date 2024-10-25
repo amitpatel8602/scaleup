@@ -57,3 +57,7 @@ body {
 hr.solid {
   border-top: 3px solid #bbb;
 }
+#my_centered_buttons { 
+  display: flex; 
+  justify-content: center; 
+}

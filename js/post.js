@@ -1,6 +1,8 @@
 $.getJSON(BLOG_LIST_PATH, function (data) {
   var postData = data;
   var query = new URLSearchParams(location.search);
+  var input = document.getElementById('my_centered_buttons');
+  input.setAttribute('data-a2a-url',location.href);
   var val = query.get("POST");
   var valid = false;
   if (postData.length > 0) {
