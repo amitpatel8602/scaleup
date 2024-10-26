@@ -61,3 +61,7 @@ hr.solid {
   display: flex; 
   justify-content: center; 
 }
+.share-text{
+  cursor: text !important;
+  padding-top: 10px !important;
+}
