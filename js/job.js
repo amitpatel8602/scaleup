@@ -1,51 +1,74 @@
-$.getJSON(JOB_OPEN_PATH, function (data) {
-  var listings = data;
-  listings.sort(function (a, b) {
-    var c = new Date(a.date).getTime();
-    var d = new Date(b.date).getTime();
-    return c > d ? 1 : -1;
+$(document).ready(function () {
+  const ITEMS_PER_LOAD = 5; // Number of items to load per batch
+  let currentIndex = 0; // Track the current index of loaded items
+  let listings = []; // Array to store job data
+
+  // Fetch job data
+  $.getJSON(JOB_OPEN_PATH, function (data) {
+    listings = data;
+    listings.sort((a, b) => new Date(b.date) - new Date(a.date)); // Sort by date descending
+    loadMoreItems(); // Load initial set of items
   });
-  var jobListings = $("#job-listings");
-  if (listings.length > 0) {
-    for (var i = 0; i < listings.length; i++) {
-      var listing = listings[i];
-      var jobListing = $(".job-listing").eq(i);
-      var isExpired = checkJobExpired(listing);
-      jobListing.append('<div class="job-listing">');
-      jobListing.append("<h3>" + listing.title + "</h3>");
-      jobListing.append("<p>Company: " + listing.companyname + "</p>");
-      jobListing.append("<p>Category: " + listing.category + "</p>");
-      jobListing.append("<p>Date: " + globalDate(listing.date) + "</p>");
+
+  // Function to load more items
+  function loadMoreItems() {
+    const jobListings = $("#job-listings");
+    const endIndex = Math.min(currentIndex + ITEMS_PER_LOAD, listings.length);
+
+    for (let i = currentIndex; i < endIndex; i++) {
+      const listing = listings[i];
+      const isExpired = checkJobExpired(listing);
+
+      const jobListing = $('<div class="job-listing"></div>');
+      jobListing.append(`<h3>${listing.title}</h3>`);
+      jobListing.append(`<p>Company: ${listing.companyname}</p>`);
+      jobListing.append(`<p>Category: ${listing.category}</p>`);
+      jobListing.append(`<p>Date: ${globalDate(listing.date)}</p>`);
+      jobListing.append(`<p>Last Date: ${globalDate(listing.lastdate)}</p>`);
       jobListing.append(
-        "<p>Last Date: " + globalDate(listing.lastdate) + "</p>"
+        `<p>Description: ${descriptionVal(listing.description, 50)}</p>`
       );
-      jobListing.append(
-        "<p>Description: " + descriptionVal(listing.description, 50) + "</p>"
-      );
-      jobListing.append("<p>Location: " + listing.location + "</p>");
+      jobListing.append(`<p>Location: ${listing.location}</p>`);
+
       if (!isExpired) {
         jobListing.append('<p class="expired">Expired</p>');
       }
-      jobListing.append(
-        isExpired
-          ? '<a href="' +
-              listing.apply +
-              '"' +
-              ' target="_blank" class="apply-button">Apply</a>'
-          : ""
-      );
-      jobListing.append("</div>");
+
+      if (isExpired) {
+        jobListing.append(
+          `<a href="${listing.apply}" target="_blank" class="apply-button">Apply</a>`
+        );
+      }
+
+      jobListings.append(jobListing);
     }
-  } else {
-    var jobListing = $(".job-listing").eq(0);
-    jobListing.append(
-      '<h3 class="no-opening">' + "There is no openings currently..." + "</h3>"
-    );
+
+    currentIndex = endIndex; // Update current index
   }
+
+  // Detect scroll to load more items
+  $(window).on('scroll', function () {
+    if ($(window).scrollTop() + $(window).height() >= $(document).height() - 100) {
+      if (currentIndex < listings.length) {
+        loadMoreItems();
+      }
+    }
+  });
 });
 
+// Check if the job is expired
 function checkJobExpired(listing) {
-  var d1 = new Date().getTime();
-  var d2 = new Date(listing.lastdate).getTime();
-  return d1 <= d2;
+  const currentDate = new Date().getTime();
+  const lastDate = new Date(listing.lastdate).getTime();
+  return currentDate <= lastDate;
+}
+
+// Example utility functions (implement these as needed)
+function globalDate(dateString) {
+  const date = new Date(dateString);
+  return date.toLocaleDateString(); // Customize date format as needed
+}
+
+function descriptionVal(description, maxLength) {
+  return description.length > maxLength ? description.substring(0, maxLength) + '...' : description;
 }
