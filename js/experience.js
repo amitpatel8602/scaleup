@@ -15,19 +15,17 @@ setTimeout(() => {
     years--;
     months += 12;
   }
-  if (months == 0 && dayDifference == 0) {
-    document.getElementById("exp").innerText =
-      "Total Experience - " + years + " years ";
-  } else if(dayDifference == 0){
-    document.getElementById("exp").innerText =
-    "Total Experience - " + years + " years " + months + " months";
-  } else if(months == 0 && dayDifference != 0){
-    document.getElementById("exp").innerText =
-    "Total Experience - " + years + " years " + dayDifference + " days";
-  }
-  else {
-    document.getElementById("exp").innerText =
-      "Total Experience - " + years + " years " + months + " months "+ dayDifference + " days";
-  }
+  document.getElementById("exp").innerText ="Total Experience - " + callLogic(years,'year') + callLogic(months,'month') + callLogic(dayDifference,'day');
 }, 1000);
 document.getElementById("exp").innerText = "Total Experience - Calculating...";
+
+function callLogic(valueAsInt, value) {
+  if (valueAsInt===0) {
+    return '';
+  }
+  else if (valueAsInt===1) {
+    return valueAsInt+" "+value+' ';
+  } else {
+    return valueAsInt+" "+value+'s ';
+  }
+}
