@@ -1,73 +1,65 @@
-$.getJSON(BLOG_LIST_PATH, function (data) {
-  var listings = data;
-  listings.sort(function (a, b) {
-    var c = new Date(a.date).getTime();
-    var d = new Date(b.date).getTime();
-    return c > d ? 1 : -1;
+$(document).ready(function () {
+  const ITEMS_PER_LOAD = 5; // Number of items to load per batch
+  let currentIndex = 0; // Track the current index of loaded items
+  let listings = []; // Array to store blog data
+
+  // Fetch blog data
+  $.getJSON(BLOG_LIST_PATH, function (data) {
+    listings = data;
+    listings.sort((a, b) => new Date(b.date) - new Date(a.date)); // Sort by date descending
+    loadMoreItems(); // Load initial set of items
   });
-  //working on fix for late image loading
-  var blogListings = $("#blog-listings");
-  if (listings.length > 0) {
-    for (var i = 0; i < listings.length; i++) {
-      var listing = listings[i];
-      var seeMore, source;
-      if (listing.id == "blog") {
-        seeMore = listing.more;
-        source = listing.source;
-      } else {
-        seeMore = "/post.html?POST=" + listing.id;
-        source = "scaleup.org.in";
-      }
-      var blogListing = $(".blog-listing").eq(i);
-      blogListing.append('<div class="blog-listing">');
-      blogListing.append("<h3>" + listing.title + "</h3>");
 
-      if (listing.tag) {
-        blogListing.append(
-          '<img src="' +
-            "images/" +
-            listing.tag +
-            ".png" +
-            '"' +
-            ' class="blog-image" loading="lazy" title="' +
-            listing.tag +
-            '"></img>'
-        );
-      } else {
-        blogListing.append(
-          '<img src="' +
-            "images/white_paper.png" +
-            '"' +
-            ' class="blog-image" loading="lazy" title="' +
-            "white_paper" +
-            '"></img>'
-        );
-      }
+  // Function to load more items
+  function loadMoreItems() {
+    const blogListings = $("#blog-listings");
+    const endIndex = Math.min(currentIndex + ITEMS_PER_LOAD, listings.length);
 
-      blogListing.append("<p>Author: " + listing.author + "</p>");
-      blogListing.append("<p>Date: " + globalDate(listing.date) + "</p>");
+    for (let i = currentIndex; i < endIndex; i++) {
+      const listing = listings[i];
+      const seeMore = listing.id === "blog" ? listing.more : `/post.html?POST=${listing.id}`;
+      const source = listing.id === "blog" ? listing.source : "scaleup.org.in";
+
+      const blogListing = $('<div class="blog-listing"></div>');
+      blogListing.append(`<h3>${listing.title}</h3>`);
+
+      const imageTag = listing.tag ? listing.tag : "white_paper";
       blogListing.append(
-        '<p class="blog-desc">Description: ' +
-          descriptionVal(listing.description, 50) +
-          "</p>"
-      );
-      //blogListing.append("<p>Tag: " + listing.tag + "</p>");
-      blogListing.append("<p>Source: " + source + "</p>");
-      blogListing.append(
-        '<a href="' +
-          seeMore +
-          '"' +
-          ' target="_blank" class="apply-button">See More</a>'
+        `<img src="images/${imageTag}.png" class="blog-image" loading="lazy" title="${imageTag}"/>`
       );
 
-      blogListing.append("</div>");
+      blogListing.append(`<p>Author: ${listing.author}</p>`);
+      blogListing.append(`<p>Date: ${globalDate(listing.date)}</p>`);
+      blogListing.append(
+        `<p class="blog-desc">Description: ${descriptionVal(listing.description, 50)}</p>`
+      );
+      blogListing.append(`<p>Source: ${source}</p>`);
+      blogListing.append(
+        `<a href="${seeMore}" target="_blank" class="apply-button">See More</a>`
+      );
+
+      blogListings.append(blogListing);
     }
-  } else {
-    var blogListing = $(".blog-listing").eq(0);
-    blogListing.append(
-      '<h3 class="no-opening">' +
-        "There is no blog published currently..." +
-        "</h3>"
-    );
+
+    currentIndex = endIndex; // Update current index
   }
+
+  // Detect scroll to load more items
+  $(window).on('scroll', function () {
+    if ($(window).scrollTop() + $(window).height() >= $(document).height() - 100) {
+      if (currentIndex < listings.length) {
+        loadMoreItems();
+      }
+    }
+  });
 });
+
+// Example utility functions (implement these as needed)
+function globalDate(dateString) {
+  const date = new Date(dateString);
+  return date.toLocaleDateString(); // Customize date format as needed
+}
+
+function descriptionVal(description, maxLength) {
+  return description.length > maxLength ? description.substring(0, maxLength) + '...' : description;
+}
