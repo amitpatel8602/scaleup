@@ -56,17 +56,18 @@ $(document).ready(function () {
   });
 });
 
+function globalDate(dateObj) {
+  var [month, day, year] = dateObj.split("/");
+  var monthName = months[parseInt(month) - 1];
+  var formattedDate = `${monthName} ${day}, ${year}`;
+  return formattedDate;
+}
+
 // Check if the job is expired
 function checkJobExpired(listing) {
   const currentDate = new Date().getTime();
   const lastDate = new Date(listing.lastdate).getTime();
   return currentDate <= lastDate;
-}
-
-// Example utility functions (implement these as needed)
-function globalDate(dateString) {
-  const date = new Date(dateString);
-  return date.toLocaleDateString(); // Customize date format as needed
 }
 
 function descriptionVal(description, maxLength) {
