@@ -55,11 +55,14 @@ $(document).ready(function () {
 });
 
 // Example utility functions (implement these as needed)
-function globalDate(dateString) {
-  const date = new Date(dateString);
-  return date.toLocaleDateString(); // Customize date format as needed
+function globalDate(dateObj) {
+  var [month, day, year] = dateObj.split("/");
+  var monthName = months[parseInt(month) - 1];
+  var formattedDate = `${monthName} ${day}, ${year}`;
+  return formattedDate;
 }
 
 function descriptionVal(description, maxLength) {
+  console.log(description);
   return description.length > maxLength ? description.substring(0, maxLength) + '...' : description;
 }
