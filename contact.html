@@ -17,8 +17,14 @@
     <link href="css/footer.css" rel="stylesheet" />
     <link href="css/style.css" rel="stylesheet" />
     <link href="css/contact.css" rel="stylesheet" />
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
     <script src="js/constants.js"></script>
-    <script src="js/htmlinclude.js"></script>
+    <script src="js/contact-links.js"></script>
+    <script src="js/htmlinclude.js"></script>    
     <title>Scale Up | Contact</title>
     <link rel="icon" type="image/vnd.microsoft.icon" href="images/favicon.ico" />
   </head>
@@ -37,10 +43,8 @@
       <!-- Profile name-->
       <div class="profile-name"><strong>Amit Patel</strong></div>
       <div class="profile-desc">
-        Adobe AEM Expert @
-        <a id="company-link" href="https://www.publicissapient.com">
-          Publicis Sapient </a
-        ><br />
+        <div id="profile-description">Loading...</div>
+        <br />
         <div id="exp"></div>
         <a class="tooltip" href="./experience.html"
           ><img
@@ -52,7 +56,8 @@
         <script src="js/experience.js"></script>
       </div>
       <!-- Links-->
-      <include src="./contact-links.html"></include>
+       <div class="contact-links"></div>
+      <!--<include src="./contact-links.html"></include>-->
     </div>
     <footer>
       <include src="./footer.html"></include>
