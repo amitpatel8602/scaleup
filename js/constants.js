@@ -8,6 +8,7 @@ const RANDOM_IMAGE = "https://picsum.photos/1000/400";
 const JOB_OPEN_EDIT_PATH = "https://www.npoint.io/docs/b55981b46615da93bb57";
 const BLOG_LIST_EDIT_PATH = "https://www.npoint.io/docs/fd0b712706a4831d4be4";
 const EXPERIENCE_BIN_PATH = "https://www.npoint.io/docs/0e3f2bfc25c10713c03c";
+const CONTACT_LINKS = "https://api.npoint.io/14bf9719104abfb73a84";
 
 const EXPERIENCE_START_DATE = "October 11, 2021";
 
