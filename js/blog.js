@@ -35,7 +35,7 @@ $(document).ready(function () {
       );
       blogListing.append(`<p>Source: ${source}</p>`);
       blogListing.append(
-        `<a href="${seeMore}" target="_blank" class="apply-button">See More</a>`
+        `<a href="${seeMore}" target="_blank" class="apply-button">Read More</a>`
       );
 
       blogListings.append(blogListing);
