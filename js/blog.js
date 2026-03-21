@@ -21,7 +21,7 @@ $(document).ready(function () {
       const source = listing.id === "blog" ? listing.source : "scaleup.org.in";
 
       const blogListing = $('<div class="blog-listing"></div>');
-      blogListing.append(`<h3>${listing.title}</h3>`);
+      blogListing.append(`<h3><a href="${seeMore}" target="_blank">${listing.title}</a></h3>`);
 
       const imageTag = listing.tag ? listing.tag : "white_paper";
       blogListing.append(
